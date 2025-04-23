@@ -1,0 +1,16 @@
+{
+  "name": "cvljm-api",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^0.19.5",
+    "@prisma/client": "^6.6.0",
+    "@scalar/hono-api-reference": "^0.8.3",
+    "hono": "^4.7.7",
+    "prisma": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

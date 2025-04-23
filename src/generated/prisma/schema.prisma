@@ -1,0 +1,136 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(100)
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model HeroSection {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  imageUrl    String?  @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BottonSection {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  imageUrl    String?  @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Faq {
+  id        Int      @id @default(autoincrement())
+  question  String   @db.VarChar(255)
+  answer    String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Footer {
+  id          Int      @id @default(autoincrement())
+  description String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Brand {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(255)
+  slug String @unique @db.VarChar(255)
+
+  Product Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id                  Int      @id @default(autoincrement())
+  name                String   @db.VarChar(255)
+  slug                String   @unique @db.VarChar(255)
+  features            String   @db.VarChar(255)
+  imageUrl            String?  @db.VarChar(255)
+  brandId             Int
+  brand               Brand    @relation(fields: [brandId], references: [id])
+  priceFullDay        Float
+  priceHalfDay        Float
+  priceFullDayInCity  Float?
+  priceHalfDayInCity  Float?
+  priceFullDayOutCity Float?
+  priceHalfDayOutCity Float?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model CompanyAbout {
+  id          Int      @id @default(autoincrement())
+  description String   @db.Text()
+  imageUrl    String?  @db.VarChar(255)
+  vision      String   @db.Text()
+  mission     String   @db.Text()
+  address     String   @db.VarChar(255)
+  phone       String   @db.VarChar(255)
+  email       String   @db.VarChar(255)
+  website     String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model OurAdvantage {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model OurService {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.VarChar(255)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Requirement {
+  id         Int      @id @default(autoincrement())
+  plusDriver String   @db.Text()
+  personal   String   @db.Text()
+  company    String   @db.Text()
+  other      String   @db.Text()
+  note       String   @db.Text()
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Regulation {
+  id          Int      @id @default(autoincrement())
+  description String   @db.Text()
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
