@@ -5,6 +5,7 @@ import { logger } from "hono/logger";
 import authRoute from "./features/auth/route";
 import heroRoute from "./features/hero-section/route";
 import bottomRoute from "./features/bottom-section/route";
+import footerRoute from "./features/footer/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -45,6 +46,7 @@ app.get(
 app.route("/auth", authRoute);
 app.route("/hero", heroRoute);
 app.route("/bottom", bottomRoute);
+app.route("/footer", footerRoute);
 
 // Error handling
 app.onError(async (err, c) => {
