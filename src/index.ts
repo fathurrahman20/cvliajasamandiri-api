@@ -7,6 +7,7 @@ import heroRoute from "./features/hero-section/route";
 import bottomRoute from "./features/bottom-section/route";
 import footerRoute from "./features/footer/route";
 import faqRoute from "./features/faq/route";
+import ourAdvantageRoute from "./features/our-advantage/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -49,6 +50,7 @@ app.route("/hero", heroRoute);
 app.route("/bottom", bottomRoute);
 app.route("/footer", footerRoute);
 app.route("/faq", faqRoute);
+app.route("/our-advantage", ourAdvantageRoute);
 
 // Error handling
 app.onError(async (err, c) => {
