@@ -9,6 +9,7 @@ import footerRoute from "./features/footer/route";
 import faqRoute from "./features/faq/route";
 import ourAdvantageRoute from "./features/our-advantage/route";
 import ourServiceRoute from "./features/our-service/route";
+import regulationRoute from "./features/regulation/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -53,6 +54,7 @@ app.route("/footer", footerRoute);
 app.route("/faq", faqRoute);
 app.route("/advantage", ourAdvantageRoute);
 app.route("/service", ourServiceRoute);
+app.route("/regulation", regulationRoute);
 
 // Error handling
 app.onError(async (err, c) => {

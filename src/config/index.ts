@@ -6,4 +6,5 @@ export const API_TAGS = {
   FAQ: ["FAQ"],
   OURADVANTAGE: ["OUR-ADVANTAGE"],
   OURSERVICE: ["OUR-SERVICE"],
+  REGULATION: ["REGULATION"],
 };
