@@ -3,4 +3,5 @@ export const API_TAGS = {
   HERO: ["HERO SECTION"],
   BOTTOM: ["BOTTOM SECTION"],
   FOOTER: ["FOOTER"],
+  FAQ: ["FAQ"],
 };

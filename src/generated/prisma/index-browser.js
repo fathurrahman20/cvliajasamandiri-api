@@ -180,6 +180,10 @@ exports.Prisma.ProductScalarFieldEnum = {
   priceHalfDayInCity: 'priceHalfDayInCity',
   priceFullDayOutCity: 'priceFullDayOutCity',
   priceHalfDayOutCity: 'priceHalfDayOutCity',
+  year: 'year',
+  fuelType: 'fuelType',
+  transmission: 'transmission',
+  maxPassengers: 'maxPassengers',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };

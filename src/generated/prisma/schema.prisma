@@ -46,7 +46,7 @@ model BottonSection {
 model Faq {
   id        Int      @id @default(autoincrement())
   question  String   @db.VarChar(255)
-  answer    String   @db.VarChar(255)
+  answer    String   @db.Text
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -70,21 +70,27 @@ model Brand {
 }
 
 model Product {
-  id                  Int      @id @default(autoincrement())
-  name                String   @db.VarChar(255)
-  slug                String   @unique @db.VarChar(255)
-  features            String   @db.VarChar(255)
-  imageUrl            String?  @db.VarChar(255)
+  id                  Int     @id @default(autoincrement())
+  name                String  @db.VarChar(255)
+  slug                String  @unique @db.VarChar(255)
+  features            String  @db.Text
+  imageUrl            String? @db.VarChar(255)
   brandId             Int
-  brand               Brand    @relation(fields: [brandId], references: [id])
+  brand               Brand   @relation(fields: [brandId], references: [id])
   priceFullDay        Float
   priceHalfDay        Float
   priceFullDayInCity  Float?
   priceHalfDayInCity  Float?
   priceFullDayOutCity Float?
   priceHalfDayOutCity Float?
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+
+  year          Int // Tahun mobil dibuat
+  fuelType      String @db.VarChar(100) // Bensin, Solar, Listrik, Hybrid, dll.
+  transmission  String @db.VarChar(100) // Manual atau Automatic
+  maxPassengers Int // Maksimal jumlah penumpang
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model CompanyAbout {

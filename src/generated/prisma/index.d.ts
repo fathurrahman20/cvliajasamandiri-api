@@ -8196,6 +8196,8 @@ export namespace Prisma {
     priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
+    year: number | null
+    maxPassengers: number | null
   }
 
   export type ProductSumAggregateOutputType = {
@@ -8207,6 +8209,8 @@ export namespace Prisma {
     priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
+    year: number | null
+    maxPassengers: number | null
   }
 
   export type ProductMinAggregateOutputType = {
@@ -8222,6 +8226,10 @@ export namespace Prisma {
     priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
+    year: number | null
+    fuelType: string | null
+    transmission: string | null
+    maxPassengers: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -8239,6 +8247,10 @@ export namespace Prisma {
     priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
+    year: number | null
+    fuelType: string | null
+    transmission: string | null
+    maxPassengers: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -8256,6 +8268,10 @@ export namespace Prisma {
     priceHalfDayInCity: number
     priceFullDayOutCity: number
     priceHalfDayOutCity: number
+    year: number
+    fuelType: number
+    transmission: number
+    maxPassengers: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -8271,6 +8287,8 @@ export namespace Prisma {
     priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
+    year?: true
+    maxPassengers?: true
   }
 
   export type ProductSumAggregateInputType = {
@@ -8282,6 +8300,8 @@ export namespace Prisma {
     priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
+    year?: true
+    maxPassengers?: true
   }
 
   export type ProductMinAggregateInputType = {
@@ -8297,6 +8317,10 @@ export namespace Prisma {
     priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
+    year?: true
+    fuelType?: true
+    transmission?: true
+    maxPassengers?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -8314,6 +8338,10 @@ export namespace Prisma {
     priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
+    year?: true
+    fuelType?: true
+    transmission?: true
+    maxPassengers?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -8331,6 +8359,10 @@ export namespace Prisma {
     priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
+    year?: true
+    fuelType?: true
+    transmission?: true
+    maxPassengers?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -8435,6 +8467,10 @@ export namespace Prisma {
     priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt: Date
     updatedAt: Date
     _count: ProductCountAggregateOutputType | null
@@ -8471,6 +8507,10 @@ export namespace Prisma {
     priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
+    year?: boolean
+    fuelType?: boolean
+    transmission?: boolean
+    maxPassengers?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | BrandDefaultArgs<ExtArgs>
@@ -8489,6 +8529,10 @@ export namespace Prisma {
     priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
+    year?: boolean
+    fuelType?: boolean
+    transmission?: boolean
+    maxPassengers?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | BrandDefaultArgs<ExtArgs>
@@ -8507,6 +8551,10 @@ export namespace Prisma {
     priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
+    year?: boolean
+    fuelType?: boolean
+    transmission?: boolean
+    maxPassengers?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | BrandDefaultArgs<ExtArgs>
@@ -8525,11 +8573,15 @@ export namespace Prisma {
     priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
+    year?: boolean
+    fuelType?: boolean
+    transmission?: boolean
+    maxPassengers?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "features" | "imageUrl" | "brandId" | "priceFullDay" | "priceHalfDay" | "priceFullDayInCity" | "priceHalfDayInCity" | "priceFullDayOutCity" | "priceHalfDayOutCity" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "features" | "imageUrl" | "brandId" | "priceFullDay" | "priceHalfDay" | "priceFullDayInCity" | "priceHalfDayInCity" | "priceFullDayOutCity" | "priceHalfDayOutCity" | "year" | "fuelType" | "transmission" | "maxPassengers" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | BrandDefaultArgs<ExtArgs>
   }
@@ -8558,6 +8610,10 @@ export namespace Prisma {
       priceHalfDayInCity: number | null
       priceFullDayOutCity: number | null
       priceHalfDayOutCity: number | null
+      year: number
+      fuelType: string
+      transmission: string
+      maxPassengers: number
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["product"]>
@@ -8996,6 +9052,10 @@ export namespace Prisma {
     readonly priceHalfDayInCity: FieldRef<"Product", 'Float'>
     readonly priceFullDayOutCity: FieldRef<"Product", 'Float'>
     readonly priceHalfDayOutCity: FieldRef<"Product", 'Float'>
+    readonly year: FieldRef<"Product", 'Int'>
+    readonly fuelType: FieldRef<"Product", 'String'>
+    readonly transmission: FieldRef<"Product", 'String'>
+    readonly maxPassengers: FieldRef<"Product", 'Int'>
     readonly createdAt: FieldRef<"Product", 'DateTime'>
     readonly updatedAt: FieldRef<"Product", 'DateTime'>
   }
@@ -14756,6 +14816,10 @@ export namespace Prisma {
     priceHalfDayInCity: 'priceHalfDayInCity',
     priceFullDayOutCity: 'priceFullDayOutCity',
     priceHalfDayOutCity: 'priceHalfDayOutCity',
+    year: 'year',
+    fuelType: 'fuelType',
+    transmission: 'transmission',
+    maxPassengers: 'maxPassengers',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -15267,6 +15331,10 @@ export namespace Prisma {
     priceHalfDayInCity?: FloatNullableFilter<"Product"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Product"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Product"> | number | null
+    year?: IntFilter<"Product"> | number
+    fuelType?: StringFilter<"Product"> | string
+    transmission?: StringFilter<"Product"> | string
+    maxPassengers?: IntFilter<"Product"> | number
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
     brand?: XOR<BrandScalarRelationFilter, BrandWhereInput>
@@ -15285,6 +15353,10 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrderInput | SortOrder
     priceFullDayOutCity?: SortOrderInput | SortOrder
     priceHalfDayOutCity?: SortOrderInput | SortOrder
+    year?: SortOrder
+    fuelType?: SortOrder
+    transmission?: SortOrder
+    maxPassengers?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     brand?: BrandOrderByWithRelationInput
@@ -15306,6 +15378,10 @@ export namespace Prisma {
     priceHalfDayInCity?: FloatNullableFilter<"Product"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Product"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Product"> | number | null
+    year?: IntFilter<"Product"> | number
+    fuelType?: StringFilter<"Product"> | string
+    transmission?: StringFilter<"Product"> | string
+    maxPassengers?: IntFilter<"Product"> | number
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
     brand?: XOR<BrandScalarRelationFilter, BrandWhereInput>
@@ -15324,6 +15400,10 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrderInput | SortOrder
     priceFullDayOutCity?: SortOrderInput | SortOrder
     priceHalfDayOutCity?: SortOrderInput | SortOrder
+    year?: SortOrder
+    fuelType?: SortOrder
+    transmission?: SortOrder
+    maxPassengers?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: ProductCountOrderByAggregateInput
@@ -15349,6 +15429,10 @@ export namespace Prisma {
     priceHalfDayInCity?: FloatNullableWithAggregatesFilter<"Product"> | number | null
     priceFullDayOutCity?: FloatNullableWithAggregatesFilter<"Product"> | number | null
     priceHalfDayOutCity?: FloatNullableWithAggregatesFilter<"Product"> | number | null
+    year?: IntWithAggregatesFilter<"Product"> | number
+    fuelType?: StringWithAggregatesFilter<"Product"> | string
+    transmission?: StringWithAggregatesFilter<"Product"> | string
+    maxPassengers?: IntWithAggregatesFilter<"Product"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
   }
@@ -16010,6 +16094,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
     brand: BrandCreateNestedOneWithoutProductInput
@@ -16028,6 +16116,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -16043,6 +16135,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneRequiredWithoutProductNestedInput
@@ -16061,6 +16157,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -16078,6 +16178,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -16093,6 +16197,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -16110,6 +16218,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -16806,6 +16918,10 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
+    year?: SortOrder
+    fuelType?: SortOrder
+    transmission?: SortOrder
+    maxPassengers?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -16819,6 +16935,8 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
+    year?: SortOrder
+    maxPassengers?: SortOrder
   }
 
   export type ProductMaxOrderByAggregateInput = {
@@ -16834,6 +16952,10 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
+    year?: SortOrder
+    fuelType?: SortOrder
+    transmission?: SortOrder
+    maxPassengers?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -16851,6 +16973,10 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
+    year?: SortOrder
+    fuelType?: SortOrder
+    transmission?: SortOrder
+    maxPassengers?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -16864,6 +16990,8 @@ export namespace Prisma {
     priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
+    year?: SortOrder
+    maxPassengers?: SortOrder
   }
 
   export type FloatWithAggregatesFilter<$PrismaModel = never> = {
@@ -17364,6 +17492,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17380,6 +17512,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17426,6 +17562,10 @@ export namespace Prisma {
     priceHalfDayInCity?: FloatNullableFilter<"Product"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Product"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Product"> | number | null
+    year?: IntFilter<"Product"> | number
+    fuelType?: StringFilter<"Product"> | string
+    transmission?: StringFilter<"Product"> | string
+    maxPassengers?: IntFilter<"Product"> | number
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
   }
@@ -17488,6 +17628,10 @@ export namespace Prisma {
     priceHalfDayInCity?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
+    year: number
+    fuelType: string
+    transmission: string
+    maxPassengers: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17503,6 +17647,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17519,6 +17667,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17535,6 +17687,10 @@ export namespace Prisma {
     priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    year?: IntFieldUpdateOperationsInput | number
+    fuelType?: StringFieldUpdateOperationsInput | string
+    transmission?: StringFieldUpdateOperationsInput | string
+    maxPassengers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
