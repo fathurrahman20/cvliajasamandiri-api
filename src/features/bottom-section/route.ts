@@ -2,29 +2,29 @@ import { API_TAGS } from "@/config";
 import { AppVariables, authMiddleware } from "@/middleware/auth-middleware";
 import { OpenAPIHono, z } from "@hono/zod-openapi";
 import {
-  CreateHero,
-  CreateHeroSchema,
-  UpdateHero,
-  UpdateHeroSchema,
+  CreateBottom,
+  CreateBottomSchema,
+  UpdateBottom,
+  UpdateBottomSchema,
 } from "./schema";
 import {
-  createHeroSection,
-  deleteHero,
-  getAllHeroSection,
-  getHeroSection,
-  updateHeroSection,
+  createBottomSection,
+  deleteBottom,
+  getAllBottomSection,
+  getBottomSection,
+  updateBottomSection,
 } from "./service";
 
-const heroSectionRoute = new OpenAPIHono();
+const bottomSectionRoute = new OpenAPIHono();
 
-// Get all detail hero
-heroSectionRoute.openapi(
+// Get all detail bottom
+bottomSectionRoute.openapi(
   {
     method: "get",
     path: "/",
-    summary: "Get all hero section",
-    description: "Return all hero section",
-    tags: API_TAGS.HERO,
+    summary: "Get all bottom section",
+    description: "Return all bottom section",
+    tags: API_TAGS.BOTTOM,
     responses: {
       200: {
         description: "Review details retrieved sucessfully",
@@ -37,24 +37,24 @@ heroSectionRoute.openapi(
   },
 
   async (c) => {
-    const response = await getAllHeroSection();
+    const response = await getAllBottomSection();
 
     return c.json({
       success: true,
-      message: "get all hero section successfully",
+      message: "get all bottom section successfully",
       data: response,
     });
   }
 );
 
-// Get detail hero
-heroSectionRoute.openapi(
+// Get detail bottom
+bottomSectionRoute.openapi(
   {
     method: "get",
     path: "/{id}",
-    summary: "Get hero details",
-    description: "Return the hero section details by hero section ID",
-    tags: API_TAGS.HERO,
+    summary: "Get bottom details",
+    description: "Return the bottom section details by bottom section ID",
+    tags: API_TAGS.BOTTOM,
     request: {
       params: z.object({ id: z.string() }),
     },
@@ -63,7 +63,7 @@ heroSectionRoute.openapi(
         description: "Review details retrieved sucessfully",
         content: { "application/json": { schema: z.object({}) } },
       },
-      404: { description: "Hero not found. " },
+      404: { description: "Bottom not found. " },
       500: {
         description: "Internal server error.",
       },
@@ -73,43 +73,43 @@ heroSectionRoute.openapi(
   async (c) => {
     const id = Number(c.req.param("id"));
 
-    const response = await getHeroSection(id);
+    const response = await getBottomSection(id);
 
     return c.json({
       success: true,
-      message: "get hero section successfully",
+      message: "get bottom section successfully",
       data: response,
     });
   }
 );
 
-// Create Hero
-heroSectionRoute.openapi(
+// Create Bottom
+bottomSectionRoute.openapi(
   {
     method: "post",
     path: "/",
-    summary: "Create Hero Section",
-    description: "Hero Section on Home Page",
+    summary: "Create Bottom Section",
+    description: "Bottom Section on Home Page",
     middleware: authMiddleware,
     security: [{ accessTokenCookie: [] }, { refreshTokenCookie: [] }],
-    tags: API_TAGS.HERO,
+    tags: API_TAGS.BOTTOM,
     request: {
       body: {
         content: {
           "application/json": {
-            schema: CreateHeroSchema,
+            schema: CreateBottomSchema,
           },
         },
       },
     },
     responses: {
       201: {
-        description: "Cretae Hero Section on Home Page",
+        description: "Cretae Bottom Section on Home Page",
         content: {
           "application/json": {
             schema: z.object({
               success: z.boolean().default(true),
-              message: z.string().default("Create hero successfully"),
+              message: z.string().default("Create bottom successfully"),
               data: z.object({
                 id: z.string(),
                 title: z.string(),
@@ -126,14 +126,14 @@ heroSectionRoute.openapi(
     },
   },
   async (c) => {
-    const request = (await c.req.json()) as CreateHero;
+    const request = (await c.req.json()) as CreateBottom;
 
-    const response = await createHeroSection(request);
+    const response = await createBottomSection(request);
 
     return c.json(
       {
         success: true,
-        message: "Create Hero Section Successfully",
+        message: "Create Bottom Section Successfully",
         data: response,
       },
       201
@@ -141,15 +141,15 @@ heroSectionRoute.openapi(
   }
 );
 
-// Update hero
-heroSectionRoute.openapi(
+// update botton
+bottomSectionRoute.openapi(
   {
     method: "patch",
     path: "/{id}",
-    summary: "Updates Hero Section by id.",
-    tags: API_TAGS.HERO,
-    middleware: authMiddleware,
+    summary: "Updates Bottom Section by id.",
+    tags: API_TAGS.BOTTOM,
     security: [{ accessTokenCookie: [] }, { refreshTokenCookie: [] }],
+    middleware: authMiddleware,
     request: {
       params: z.object({ id: z.string() }),
       body: {
@@ -158,13 +158,12 @@ heroSectionRoute.openapi(
             schema: z.object({
               title: z.string().optional().openapi({
                 description: "Title",
-                example:
-                  "Sewa & Rental Mobil Terbaik di kawasan Cikarang Selatan",
+                example: "Kendarai Milikmu Hari Ini. Berkendara Lebih Cepat.",
               }),
               description: z.string().optional().openapi({
                 description: "Description",
                 example:
-                  "Selamat datang di Lia Jasa Mandiri. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam",
+                  "Dapatkan pemesanan instan untuk mengejar apa pun yang sebenarnya ingin Anda capai hari ini, ya.",
               }),
               imageUrl: z.string().optional().openapi({
                 description: "Image URL",
@@ -178,7 +177,7 @@ heroSectionRoute.openapi(
     },
     responses: {
       200: {
-        description: "Hero Section updated successfully",
+        description: "Bottom Section updated successfully",
       },
       400: { description: "Validation error." },
       404: { description: "Review not found." },
@@ -189,34 +188,34 @@ heroSectionRoute.openapi(
   async (c) => {
     const id = Number(c.req.param("id"));
 
-    const request = (await c.req.json()) as UpdateHero;
+    const request = (await c.req.json()) as UpdateBottom;
     request.id = id;
 
-    const response = await updateHeroSection(request);
+    const response = await updateBottomSection(request);
 
     return c.json({
       success: true,
-      message: "Update hero section successfully",
+      message: "Update Bottom section successfully",
       data: response,
     });
   }
 );
 
-// delete hero
-heroSectionRoute.openapi(
+// delete bottom
+bottomSectionRoute.openapi(
   {
     method: "delete",
     path: "/{id}",
-    summary: "Delete Hero Section by id.",
-    tags: API_TAGS.HERO,
-    middleware: authMiddleware,
+    summary: "Delete Bottom Section by id.",
+    tags: API_TAGS.BOTTOM,
     security: [{ accessTokenCookie: [] }, { refreshTokenCookie: [] }],
+    middleware: authMiddleware,
     request: {
       params: z.object({ id: z.string() }),
     },
     responses: {
       200: {
-        description: "Hero Section deleted successfully",
+        description: "Bottom Section deleted successfully",
       },
       400: { description: "Validation error." },
       404: { description: "Review not found." },
@@ -227,14 +226,14 @@ heroSectionRoute.openapi(
   async (c) => {
     const id = Number(c.req.param("id"));
 
-    const response = await deleteHero(id);
+    const response = await deleteBottom(id);
 
     return c.json({
       success: true,
-      message: "Delete Hero section successfully",
+      message: "Delete Bottom section successfully",
       data: response,
     });
   }
 );
 
-export default heroSectionRoute;
+export default bottomSectionRoute;

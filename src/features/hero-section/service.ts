@@ -51,3 +51,19 @@ export const updateHeroSection = async (request: UpdateHero) => {
 
   return updatedHero;
 };
+
+export const deleteHero = async (id: number) => {
+  const findHero = await prisma.heroSection.findUnique({
+    where: { id },
+  });
+
+  if (!findHero) {
+    throw new HTTPException(404, { message: "Hero not found!" });
+  }
+
+  await prisma.heroSection.delete({
+    where: { id },
+  });
+
+  return true;
+};

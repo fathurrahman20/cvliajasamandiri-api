@@ -302,7 +302,10 @@ authRoute.openapi(
 
     clearAuthCookies(c);
 
-    return c.json({ message: "Logged out successfully" });
+    return c.json({ 
+      success: true,
+      message: "Logged out successfully"
+     });
   }
 );
 
