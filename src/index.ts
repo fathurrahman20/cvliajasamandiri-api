@@ -10,6 +10,9 @@ import faqRoute from "./features/faq/route";
 import ourAdvantageRoute from "./features/our-advantage/route";
 import ourServiceRoute from "./features/our-service/route";
 import regulationRoute from "./features/regulation/route";
+import requirementWithDriverRoute from "./features/requirement-with-driver/route";
+import requirementNoDriverRoute from "./features/requirement-no-driver/route";
+import requirementNoteRoute from "./features/requirement-note/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -55,6 +58,9 @@ app.route("/faq", faqRoute);
 app.route("/advantage", ourAdvantageRoute);
 app.route("/service", ourServiceRoute);
 app.route("/regulation", regulationRoute);
+app.route("/requirement-with-driver", requirementWithDriverRoute);
+app.route("/requirement-no-driver", requirementNoDriverRoute);
+app.route("/requirement-note", requirementNoteRoute);
 
 // Error handling
 app.onError(async (err, c) => {

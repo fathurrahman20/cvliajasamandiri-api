@@ -64,10 +64,20 @@ export type OurAdvantage = $Result.DefaultSelection<Prisma.$OurAdvantagePayload>
  */
 export type OurService = $Result.DefaultSelection<Prisma.$OurServicePayload>
 /**
- * Model Requirement
+ * Model RequirementWithDriver
  * 
  */
-export type Requirement = $Result.DefaultSelection<Prisma.$RequirementPayload>
+export type RequirementWithDriver = $Result.DefaultSelection<Prisma.$RequirementWithDriverPayload>
+/**
+ * Model RequirementNoDriver
+ * 
+ */
+export type RequirementNoDriver = $Result.DefaultSelection<Prisma.$RequirementNoDriverPayload>
+/**
+ * Model RequirementNote
+ * 
+ */
+export type RequirementNote = $Result.DefaultSelection<Prisma.$RequirementNotePayload>
 /**
  * Model Regulation
  * 
@@ -300,14 +310,34 @@ export class PrismaClient<
   get ourService(): Prisma.OurServiceDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.requirement`: Exposes CRUD operations for the **Requirement** model.
+   * `prisma.requirementWithDriver`: Exposes CRUD operations for the **RequirementWithDriver** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Requirements
-    * const requirements = await prisma.requirement.findMany()
+    * // Fetch zero or more RequirementWithDrivers
+    * const requirementWithDrivers = await prisma.requirementWithDriver.findMany()
     * ```
     */
-  get requirement(): Prisma.RequirementDelegate<ExtArgs, ClientOptions>;
+  get requirementWithDriver(): Prisma.RequirementWithDriverDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.requirementNoDriver`: Exposes CRUD operations for the **RequirementNoDriver** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RequirementNoDrivers
+    * const requirementNoDrivers = await prisma.requirementNoDriver.findMany()
+    * ```
+    */
+  get requirementNoDriver(): Prisma.RequirementNoDriverDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.requirementNote`: Exposes CRUD operations for the **RequirementNote** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RequirementNotes
+    * const requirementNotes = await prisma.requirementNote.findMany()
+    * ```
+    */
+  get requirementNote(): Prisma.RequirementNoteDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.regulation`: Exposes CRUD operations for the **Regulation** model.
@@ -768,7 +798,9 @@ export namespace Prisma {
     CompanyAbout: 'CompanyAbout',
     OurAdvantage: 'OurAdvantage',
     OurService: 'OurService',
-    Requirement: 'Requirement',
+    RequirementWithDriver: 'RequirementWithDriver',
+    RequirementNoDriver: 'RequirementNoDriver',
+    RequirementNote: 'RequirementNote',
     Regulation: 'Regulation'
   };
 
@@ -788,7 +820,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "heroSection" | "bottonSection" | "faq" | "footer" | "brand" | "product" | "companyAbout" | "ourAdvantage" | "ourService" | "requirement" | "regulation"
+      modelProps: "user" | "heroSection" | "bottonSection" | "faq" | "footer" | "brand" | "product" | "companyAbout" | "ourAdvantage" | "ourService" | "requirementWithDriver" | "requirementNoDriver" | "requirementNote" | "regulation"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1532,77 +1564,225 @@ export namespace Prisma {
           }
         }
       }
-      Requirement: {
-        payload: Prisma.$RequirementPayload<ExtArgs>
-        fields: Prisma.RequirementFieldRefs
+      RequirementWithDriver: {
+        payload: Prisma.$RequirementWithDriverPayload<ExtArgs>
+        fields: Prisma.RequirementWithDriverFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.RequirementFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload> | null
+            args: Prisma.RequirementWithDriverFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.RequirementFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           findFirst: {
-            args: Prisma.RequirementFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload> | null
+            args: Prisma.RequirementWithDriverFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.RequirementFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           findMany: {
-            args: Prisma.RequirementFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>[]
+            args: Prisma.RequirementWithDriverFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>[]
           }
           create: {
-            args: Prisma.RequirementCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           createMany: {
-            args: Prisma.RequirementCreateManyArgs<ExtArgs>
+            args: Prisma.RequirementWithDriverCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.RequirementCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>[]
+            args: Prisma.RequirementWithDriverCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>[]
           }
           delete: {
-            args: Prisma.RequirementDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           update: {
-            args: Prisma.RequirementUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           deleteMany: {
-            args: Prisma.RequirementDeleteManyArgs<ExtArgs>
+            args: Prisma.RequirementWithDriverDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.RequirementUpdateManyArgs<ExtArgs>
+            args: Prisma.RequirementWithDriverUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.RequirementUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>[]
+            args: Prisma.RequirementWithDriverUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>[]
           }
           upsert: {
-            args: Prisma.RequirementUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RequirementPayload>
+            args: Prisma.RequirementWithDriverUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementWithDriverPayload>
           }
           aggregate: {
-            args: Prisma.RequirementAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateRequirement>
+            args: Prisma.RequirementWithDriverAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRequirementWithDriver>
           }
           groupBy: {
-            args: Prisma.RequirementGroupByArgs<ExtArgs>
-            result: $Utils.Optional<RequirementGroupByOutputType>[]
+            args: Prisma.RequirementWithDriverGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RequirementWithDriverGroupByOutputType>[]
           }
           count: {
-            args: Prisma.RequirementCountArgs<ExtArgs>
-            result: $Utils.Optional<RequirementCountAggregateOutputType> | number
+            args: Prisma.RequirementWithDriverCountArgs<ExtArgs>
+            result: $Utils.Optional<RequirementWithDriverCountAggregateOutputType> | number
+          }
+        }
+      }
+      RequirementNoDriver: {
+        payload: Prisma.$RequirementNoDriverPayload<ExtArgs>
+        fields: Prisma.RequirementNoDriverFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RequirementNoDriverFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RequirementNoDriverFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          findFirst: {
+            args: Prisma.RequirementNoDriverFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RequirementNoDriverFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          findMany: {
+            args: Prisma.RequirementNoDriverFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>[]
+          }
+          create: {
+            args: Prisma.RequirementNoDriverCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          createMany: {
+            args: Prisma.RequirementNoDriverCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RequirementNoDriverCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>[]
+          }
+          delete: {
+            args: Prisma.RequirementNoDriverDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          update: {
+            args: Prisma.RequirementNoDriverUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          deleteMany: {
+            args: Prisma.RequirementNoDriverDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RequirementNoDriverUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RequirementNoDriverUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>[]
+          }
+          upsert: {
+            args: Prisma.RequirementNoDriverUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNoDriverPayload>
+          }
+          aggregate: {
+            args: Prisma.RequirementNoDriverAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRequirementNoDriver>
+          }
+          groupBy: {
+            args: Prisma.RequirementNoDriverGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RequirementNoDriverGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RequirementNoDriverCountArgs<ExtArgs>
+            result: $Utils.Optional<RequirementNoDriverCountAggregateOutputType> | number
+          }
+        }
+      }
+      RequirementNote: {
+        payload: Prisma.$RequirementNotePayload<ExtArgs>
+        fields: Prisma.RequirementNoteFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RequirementNoteFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RequirementNoteFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          findFirst: {
+            args: Prisma.RequirementNoteFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RequirementNoteFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          findMany: {
+            args: Prisma.RequirementNoteFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>[]
+          }
+          create: {
+            args: Prisma.RequirementNoteCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          createMany: {
+            args: Prisma.RequirementNoteCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RequirementNoteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>[]
+          }
+          delete: {
+            args: Prisma.RequirementNoteDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          update: {
+            args: Prisma.RequirementNoteUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          deleteMany: {
+            args: Prisma.RequirementNoteDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RequirementNoteUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RequirementNoteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>[]
+          }
+          upsert: {
+            args: Prisma.RequirementNoteUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequirementNotePayload>
+          }
+          aggregate: {
+            args: Prisma.RequirementNoteAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRequirementNote>
+          }
+          groupBy: {
+            args: Prisma.RequirementNoteGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RequirementNoteGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RequirementNoteCountArgs<ExtArgs>
+            result: $Utils.Optional<RequirementNoteCountAggregateOutputType> | number
           }
         }
       }
@@ -1774,7 +1954,9 @@ export namespace Prisma {
     companyAbout?: CompanyAboutOmit
     ourAdvantage?: OurAdvantageOmit
     ourService?: OurServiceOmit
-    requirement?: RequirementOmit
+    requirementWithDriver?: RequirementWithDriverOmit
+    requirementNoDriver?: RequirementNoDriverOmit
+    requirementNote?: RequirementNoteOmit
     regulation?: RegulationOmit
   }
 
@@ -12638,406 +12820,358 @@ export namespace Prisma {
 
 
   /**
-   * Model Requirement
+   * Model RequirementWithDriver
    */
 
-  export type AggregateRequirement = {
-    _count: RequirementCountAggregateOutputType | null
-    _avg: RequirementAvgAggregateOutputType | null
-    _sum: RequirementSumAggregateOutputType | null
-    _min: RequirementMinAggregateOutputType | null
-    _max: RequirementMaxAggregateOutputType | null
+  export type AggregateRequirementWithDriver = {
+    _count: RequirementWithDriverCountAggregateOutputType | null
+    _avg: RequirementWithDriverAvgAggregateOutputType | null
+    _sum: RequirementWithDriverSumAggregateOutputType | null
+    _min: RequirementWithDriverMinAggregateOutputType | null
+    _max: RequirementWithDriverMaxAggregateOutputType | null
   }
 
-  export type RequirementAvgAggregateOutputType = {
+  export type RequirementWithDriverAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type RequirementSumAggregateOutputType = {
+  export type RequirementWithDriverSumAggregateOutputType = {
     id: number | null
   }
 
-  export type RequirementMinAggregateOutputType = {
+  export type RequirementWithDriverMinAggregateOutputType = {
     id: number | null
-    plusDriver: string | null
-    personal: string | null
-    company: string | null
-    other: string | null
-    note: string | null
+    description: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type RequirementMaxAggregateOutputType = {
+  export type RequirementWithDriverMaxAggregateOutputType = {
     id: number | null
-    plusDriver: string | null
-    personal: string | null
-    company: string | null
-    other: string | null
-    note: string | null
+    description: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type RequirementCountAggregateOutputType = {
+  export type RequirementWithDriverCountAggregateOutputType = {
     id: number
-    plusDriver: number
-    personal: number
-    company: number
-    other: number
-    note: number
+    description: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
 
-  export type RequirementAvgAggregateInputType = {
+  export type RequirementWithDriverAvgAggregateInputType = {
     id?: true
   }
 
-  export type RequirementSumAggregateInputType = {
+  export type RequirementWithDriverSumAggregateInputType = {
     id?: true
   }
 
-  export type RequirementMinAggregateInputType = {
+  export type RequirementWithDriverMinAggregateInputType = {
     id?: true
-    plusDriver?: true
-    personal?: true
-    company?: true
-    other?: true
-    note?: true
+    description?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type RequirementMaxAggregateInputType = {
+  export type RequirementWithDriverMaxAggregateInputType = {
     id?: true
-    plusDriver?: true
-    personal?: true
-    company?: true
-    other?: true
-    note?: true
+    description?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type RequirementCountAggregateInputType = {
+  export type RequirementWithDriverCountAggregateInputType = {
     id?: true
-    plusDriver?: true
-    personal?: true
-    company?: true
-    other?: true
-    note?: true
+    description?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
   }
 
-  export type RequirementAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Requirement to aggregate.
+     * Filter which RequirementWithDriver to aggregate.
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Requirements to fetch.
+     * Determine the order of RequirementWithDrivers to fetch.
      */
-    orderBy?: RequirementOrderByWithRelationInput | RequirementOrderByWithRelationInput[]
+    orderBy?: RequirementWithDriverOrderByWithRelationInput | RequirementWithDriverOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: RequirementWhereUniqueInput
+    cursor?: RequirementWithDriverWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Requirements from the position of the cursor.
+     * Take `±n` RequirementWithDrivers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Requirements.
+     * Skip the first `n` RequirementWithDrivers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Requirements
+     * Count returned RequirementWithDrivers
     **/
-    _count?: true | RequirementCountAggregateInputType
+    _count?: true | RequirementWithDriverCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: RequirementAvgAggregateInputType
+    _avg?: RequirementWithDriverAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: RequirementSumAggregateInputType
+    _sum?: RequirementWithDriverSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: RequirementMinAggregateInputType
+    _min?: RequirementWithDriverMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: RequirementMaxAggregateInputType
+    _max?: RequirementWithDriverMaxAggregateInputType
   }
 
-  export type GetRequirementAggregateType<T extends RequirementAggregateArgs> = {
-        [P in keyof T & keyof AggregateRequirement]: P extends '_count' | 'count'
+  export type GetRequirementWithDriverAggregateType<T extends RequirementWithDriverAggregateArgs> = {
+        [P in keyof T & keyof AggregateRequirementWithDriver]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateRequirement[P]>
-      : GetScalarType<T[P], AggregateRequirement[P]>
+        : GetScalarType<T[P], AggregateRequirementWithDriver[P]>
+      : GetScalarType<T[P], AggregateRequirementWithDriver[P]>
   }
 
 
 
 
-  export type RequirementGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RequirementWhereInput
-    orderBy?: RequirementOrderByWithAggregationInput | RequirementOrderByWithAggregationInput[]
-    by: RequirementScalarFieldEnum[] | RequirementScalarFieldEnum
-    having?: RequirementScalarWhereWithAggregatesInput
+  export type RequirementWithDriverGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RequirementWithDriverWhereInput
+    orderBy?: RequirementWithDriverOrderByWithAggregationInput | RequirementWithDriverOrderByWithAggregationInput[]
+    by: RequirementWithDriverScalarFieldEnum[] | RequirementWithDriverScalarFieldEnum
+    having?: RequirementWithDriverScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: RequirementCountAggregateInputType | true
-    _avg?: RequirementAvgAggregateInputType
-    _sum?: RequirementSumAggregateInputType
-    _min?: RequirementMinAggregateInputType
-    _max?: RequirementMaxAggregateInputType
+    _count?: RequirementWithDriverCountAggregateInputType | true
+    _avg?: RequirementWithDriverAvgAggregateInputType
+    _sum?: RequirementWithDriverSumAggregateInputType
+    _min?: RequirementWithDriverMinAggregateInputType
+    _max?: RequirementWithDriverMaxAggregateInputType
   }
 
-  export type RequirementGroupByOutputType = {
+  export type RequirementWithDriverGroupByOutputType = {
     id: number
-    plusDriver: string
-    personal: string
-    company: string
-    other: string
-    note: string
+    description: string
     createdAt: Date
     updatedAt: Date
-    _count: RequirementCountAggregateOutputType | null
-    _avg: RequirementAvgAggregateOutputType | null
-    _sum: RequirementSumAggregateOutputType | null
-    _min: RequirementMinAggregateOutputType | null
-    _max: RequirementMaxAggregateOutputType | null
+    _count: RequirementWithDriverCountAggregateOutputType | null
+    _avg: RequirementWithDriverAvgAggregateOutputType | null
+    _sum: RequirementWithDriverSumAggregateOutputType | null
+    _min: RequirementWithDriverMinAggregateOutputType | null
+    _max: RequirementWithDriverMaxAggregateOutputType | null
   }
 
-  type GetRequirementGroupByPayload<T extends RequirementGroupByArgs> = Prisma.PrismaPromise<
+  type GetRequirementWithDriverGroupByPayload<T extends RequirementWithDriverGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<RequirementGroupByOutputType, T['by']> &
+      PickEnumerable<RequirementWithDriverGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof RequirementGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof RequirementWithDriverGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], RequirementGroupByOutputType[P]>
-            : GetScalarType<T[P], RequirementGroupByOutputType[P]>
+              : GetScalarType<T[P], RequirementWithDriverGroupByOutputType[P]>
+            : GetScalarType<T[P], RequirementWithDriverGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type RequirementSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequirementWithDriverSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plusDriver?: boolean
-    personal?: boolean
-    company?: boolean
-    other?: boolean
-    note?: boolean
+    description?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["requirement"]>
+  }, ExtArgs["result"]["requirementWithDriver"]>
 
-  export type RequirementSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequirementWithDriverSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plusDriver?: boolean
-    personal?: boolean
-    company?: boolean
-    other?: boolean
-    note?: boolean
+    description?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["requirement"]>
+  }, ExtArgs["result"]["requirementWithDriver"]>
 
-  export type RequirementSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequirementWithDriverSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    plusDriver?: boolean
-    personal?: boolean
-    company?: boolean
-    other?: boolean
-    note?: boolean
+    description?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["requirement"]>
+  }, ExtArgs["result"]["requirementWithDriver"]>
 
-  export type RequirementSelectScalar = {
+  export type RequirementWithDriverSelectScalar = {
     id?: boolean
-    plusDriver?: boolean
-    personal?: boolean
-    company?: boolean
-    other?: boolean
-    note?: boolean
+    description?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type RequirementOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plusDriver" | "personal" | "company" | "other" | "note" | "createdAt" | "updatedAt", ExtArgs["result"]["requirement"]>
+  export type RequirementWithDriverOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["requirementWithDriver"]>
 
-  export type $RequirementPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Requirement"
+  export type $RequirementWithDriverPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RequirementWithDriver"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      plusDriver: string
-      personal: string
-      company: string
-      other: string
-      note: string
+      description: string
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["requirement"]>
+    }, ExtArgs["result"]["requirementWithDriver"]>
     composites: {}
   }
 
-  type RequirementGetPayload<S extends boolean | null | undefined | RequirementDefaultArgs> = $Result.GetResult<Prisma.$RequirementPayload, S>
+  type RequirementWithDriverGetPayload<S extends boolean | null | undefined | RequirementWithDriverDefaultArgs> = $Result.GetResult<Prisma.$RequirementWithDriverPayload, S>
 
-  type RequirementCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<RequirementFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: RequirementCountAggregateInputType | true
+  type RequirementWithDriverCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RequirementWithDriverFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RequirementWithDriverCountAggregateInputType | true
     }
 
-  export interface RequirementDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Requirement'], meta: { name: 'Requirement' } }
+  export interface RequirementWithDriverDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RequirementWithDriver'], meta: { name: 'RequirementWithDriver' } }
     /**
-     * Find zero or one Requirement that matches the filter.
-     * @param {RequirementFindUniqueArgs} args - Arguments to find a Requirement
+     * Find zero or one RequirementWithDriver that matches the filter.
+     * @param {RequirementWithDriverFindUniqueArgs} args - Arguments to find a RequirementWithDriver
      * @example
-     * // Get one Requirement
-     * const requirement = await prisma.requirement.findUnique({
+     * // Get one RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends RequirementFindUniqueArgs>(args: SelectSubset<T, RequirementFindUniqueArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends RequirementWithDriverFindUniqueArgs>(args: SelectSubset<T, RequirementWithDriverFindUniqueArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Requirement that matches the filter or throw an error with `error.code='P2025'`
+     * Find one RequirementWithDriver that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {RequirementFindUniqueOrThrowArgs} args - Arguments to find a Requirement
+     * @param {RequirementWithDriverFindUniqueOrThrowArgs} args - Arguments to find a RequirementWithDriver
      * @example
-     * // Get one Requirement
-     * const requirement = await prisma.requirement.findUniqueOrThrow({
+     * // Get one RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends RequirementFindUniqueOrThrowArgs>(args: SelectSubset<T, RequirementFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends RequirementWithDriverFindUniqueOrThrowArgs>(args: SelectSubset<T, RequirementWithDriverFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Requirement that matches the filter.
+     * Find the first RequirementWithDriver that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementFindFirstArgs} args - Arguments to find a Requirement
+     * @param {RequirementWithDriverFindFirstArgs} args - Arguments to find a RequirementWithDriver
      * @example
-     * // Get one Requirement
-     * const requirement = await prisma.requirement.findFirst({
+     * // Get one RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends RequirementFindFirstArgs>(args?: SelectSubset<T, RequirementFindFirstArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends RequirementWithDriverFindFirstArgs>(args?: SelectSubset<T, RequirementWithDriverFindFirstArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Requirement that matches the filter or
+     * Find the first RequirementWithDriver that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementFindFirstOrThrowArgs} args - Arguments to find a Requirement
+     * @param {RequirementWithDriverFindFirstOrThrowArgs} args - Arguments to find a RequirementWithDriver
      * @example
-     * // Get one Requirement
-     * const requirement = await prisma.requirement.findFirstOrThrow({
+     * // Get one RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends RequirementFindFirstOrThrowArgs>(args?: SelectSubset<T, RequirementFindFirstOrThrowArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends RequirementWithDriverFindFirstOrThrowArgs>(args?: SelectSubset<T, RequirementWithDriverFindFirstOrThrowArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Requirements that matches the filter.
+     * Find zero or more RequirementWithDrivers that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {RequirementWithDriverFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Requirements
-     * const requirements = await prisma.requirement.findMany()
+     * // Get all RequirementWithDrivers
+     * const requirementWithDrivers = await prisma.requirementWithDriver.findMany()
      * 
-     * // Get first 10 Requirements
-     * const requirements = await prisma.requirement.findMany({ take: 10 })
+     * // Get first 10 RequirementWithDrivers
+     * const requirementWithDrivers = await prisma.requirementWithDriver.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const requirementWithIdOnly = await prisma.requirement.findMany({ select: { id: true } })
+     * const requirementWithDriverWithIdOnly = await prisma.requirementWithDriver.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends RequirementFindManyArgs>(args?: SelectSubset<T, RequirementFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends RequirementWithDriverFindManyArgs>(args?: SelectSubset<T, RequirementWithDriverFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Requirement.
-     * @param {RequirementCreateArgs} args - Arguments to create a Requirement.
+     * Create a RequirementWithDriver.
+     * @param {RequirementWithDriverCreateArgs} args - Arguments to create a RequirementWithDriver.
      * @example
-     * // Create one Requirement
-     * const Requirement = await prisma.requirement.create({
+     * // Create one RequirementWithDriver
+     * const RequirementWithDriver = await prisma.requirementWithDriver.create({
      *   data: {
-     *     // ... data to create a Requirement
+     *     // ... data to create a RequirementWithDriver
      *   }
      * })
      * 
      */
-    create<T extends RequirementCreateArgs>(args: SelectSubset<T, RequirementCreateArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends RequirementWithDriverCreateArgs>(args: SelectSubset<T, RequirementWithDriverCreateArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Requirements.
-     * @param {RequirementCreateManyArgs} args - Arguments to create many Requirements.
+     * Create many RequirementWithDrivers.
+     * @param {RequirementWithDriverCreateManyArgs} args - Arguments to create many RequirementWithDrivers.
      * @example
-     * // Create many Requirements
-     * const requirement = await prisma.requirement.createMany({
+     * // Create many RequirementWithDrivers
+     * const requirementWithDriver = await prisma.requirementWithDriver.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends RequirementCreateManyArgs>(args?: SelectSubset<T, RequirementCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends RequirementWithDriverCreateManyArgs>(args?: SelectSubset<T, RequirementWithDriverCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Requirements and returns the data saved in the database.
-     * @param {RequirementCreateManyAndReturnArgs} args - Arguments to create many Requirements.
+     * Create many RequirementWithDrivers and returns the data saved in the database.
+     * @param {RequirementWithDriverCreateManyAndReturnArgs} args - Arguments to create many RequirementWithDrivers.
      * @example
-     * // Create many Requirements
-     * const requirement = await prisma.requirement.createManyAndReturn({
+     * // Create many RequirementWithDrivers
+     * const requirementWithDriver = await prisma.requirementWithDriver.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Requirements and only return the `id`
-     * const requirementWithIdOnly = await prisma.requirement.createManyAndReturn({
+     * // Create many RequirementWithDrivers and only return the `id`
+     * const requirementWithDriverWithIdOnly = await prisma.requirementWithDriver.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -13047,28 +13181,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends RequirementCreateManyAndReturnArgs>(args?: SelectSubset<T, RequirementCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends RequirementWithDriverCreateManyAndReturnArgs>(args?: SelectSubset<T, RequirementWithDriverCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Requirement.
-     * @param {RequirementDeleteArgs} args - Arguments to delete one Requirement.
+     * Delete a RequirementWithDriver.
+     * @param {RequirementWithDriverDeleteArgs} args - Arguments to delete one RequirementWithDriver.
      * @example
-     * // Delete one Requirement
-     * const Requirement = await prisma.requirement.delete({
+     * // Delete one RequirementWithDriver
+     * const RequirementWithDriver = await prisma.requirementWithDriver.delete({
      *   where: {
-     *     // ... filter to delete one Requirement
+     *     // ... filter to delete one RequirementWithDriver
      *   }
      * })
      * 
      */
-    delete<T extends RequirementDeleteArgs>(args: SelectSubset<T, RequirementDeleteArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends RequirementWithDriverDeleteArgs>(args: SelectSubset<T, RequirementWithDriverDeleteArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Requirement.
-     * @param {RequirementUpdateArgs} args - Arguments to update one Requirement.
+     * Update one RequirementWithDriver.
+     * @param {RequirementWithDriverUpdateArgs} args - Arguments to update one RequirementWithDriver.
      * @example
-     * // Update one Requirement
-     * const requirement = await prisma.requirement.update({
+     * // Update one RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -13078,30 +13212,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends RequirementUpdateArgs>(args: SelectSubset<T, RequirementUpdateArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends RequirementWithDriverUpdateArgs>(args: SelectSubset<T, RequirementWithDriverUpdateArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Requirements.
-     * @param {RequirementDeleteManyArgs} args - Arguments to filter Requirements to delete.
+     * Delete zero or more RequirementWithDrivers.
+     * @param {RequirementWithDriverDeleteManyArgs} args - Arguments to filter RequirementWithDrivers to delete.
      * @example
-     * // Delete a few Requirements
-     * const { count } = await prisma.requirement.deleteMany({
+     * // Delete a few RequirementWithDrivers
+     * const { count } = await prisma.requirementWithDriver.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends RequirementDeleteManyArgs>(args?: SelectSubset<T, RequirementDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends RequirementWithDriverDeleteManyArgs>(args?: SelectSubset<T, RequirementWithDriverDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Requirements.
+     * Update zero or more RequirementWithDrivers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {RequirementWithDriverUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Requirements
-     * const requirement = await prisma.requirement.updateMany({
+     * // Update many RequirementWithDrivers
+     * const requirementWithDriver = await prisma.requirementWithDriver.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -13111,14 +13245,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends RequirementUpdateManyArgs>(args: SelectSubset<T, RequirementUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends RequirementWithDriverUpdateManyArgs>(args: SelectSubset<T, RequirementWithDriverUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Requirements and returns the data updated in the database.
-     * @param {RequirementUpdateManyAndReturnArgs} args - Arguments to update many Requirements.
+     * Update zero or more RequirementWithDrivers and returns the data updated in the database.
+     * @param {RequirementWithDriverUpdateManyAndReturnArgs} args - Arguments to update many RequirementWithDrivers.
      * @example
-     * // Update many Requirements
-     * const requirement = await prisma.requirement.updateManyAndReturn({
+     * // Update many RequirementWithDrivers
+     * const requirementWithDriver = await prisma.requirementWithDriver.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -13127,8 +13261,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Requirements and only return the `id`
-     * const requirementWithIdOnly = await prisma.requirement.updateManyAndReturn({
+     * // Update zero or more RequirementWithDrivers and only return the `id`
+     * const requirementWithDriverWithIdOnly = await prisma.requirementWithDriver.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -13141,56 +13275,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends RequirementUpdateManyAndReturnArgs>(args: SelectSubset<T, RequirementUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends RequirementWithDriverUpdateManyAndReturnArgs>(args: SelectSubset<T, RequirementWithDriverUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Requirement.
-     * @param {RequirementUpsertArgs} args - Arguments to update or create a Requirement.
+     * Create or update one RequirementWithDriver.
+     * @param {RequirementWithDriverUpsertArgs} args - Arguments to update or create a RequirementWithDriver.
      * @example
-     * // Update or create a Requirement
-     * const requirement = await prisma.requirement.upsert({
+     * // Update or create a RequirementWithDriver
+     * const requirementWithDriver = await prisma.requirementWithDriver.upsert({
      *   create: {
-     *     // ... data to create a Requirement
+     *     // ... data to create a RequirementWithDriver
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Requirement we want to update
+     *     // ... the filter for the RequirementWithDriver we want to update
      *   }
      * })
      */
-    upsert<T extends RequirementUpsertArgs>(args: SelectSubset<T, RequirementUpsertArgs<ExtArgs>>): Prisma__RequirementClient<$Result.GetResult<Prisma.$RequirementPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends RequirementWithDriverUpsertArgs>(args: SelectSubset<T, RequirementWithDriverUpsertArgs<ExtArgs>>): Prisma__RequirementWithDriverClient<$Result.GetResult<Prisma.$RequirementWithDriverPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Requirements.
+     * Count the number of RequirementWithDrivers.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementCountArgs} args - Arguments to filter Requirements to count.
+     * @param {RequirementWithDriverCountArgs} args - Arguments to filter RequirementWithDrivers to count.
      * @example
-     * // Count the number of Requirements
-     * const count = await prisma.requirement.count({
+     * // Count the number of RequirementWithDrivers
+     * const count = await prisma.requirementWithDriver.count({
      *   where: {
-     *     // ... the filter for the Requirements we want to count
+     *     // ... the filter for the RequirementWithDrivers we want to count
      *   }
      * })
     **/
-    count<T extends RequirementCountArgs>(
-      args?: Subset<T, RequirementCountArgs>,
+    count<T extends RequirementWithDriverCountArgs>(
+      args?: Subset<T, RequirementWithDriverCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], RequirementCountAggregateOutputType>
+          : GetScalarType<T['select'], RequirementWithDriverCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Requirement.
+     * Allows you to perform aggregations operations on a RequirementWithDriver.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {RequirementWithDriverAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -13210,13 +13344,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends RequirementAggregateArgs>(args: Subset<T, RequirementAggregateArgs>): Prisma.PrismaPromise<GetRequirementAggregateType<T>>
+    aggregate<T extends RequirementWithDriverAggregateArgs>(args: Subset<T, RequirementWithDriverAggregateArgs>): Prisma.PrismaPromise<GetRequirementWithDriverAggregateType<T>>
 
     /**
-     * Group by Requirement.
+     * Group by RequirementWithDriver.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RequirementGroupByArgs} args - Group by arguments.
+     * @param {RequirementWithDriverGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -13231,14 +13365,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends RequirementGroupByArgs,
+      T extends RequirementWithDriverGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: RequirementGroupByArgs['orderBy'] }
-        : { orderBy?: RequirementGroupByArgs['orderBy'] },
+        ? { orderBy: RequirementWithDriverGroupByArgs['orderBy'] }
+        : { orderBy?: RequirementWithDriverGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -13287,20 +13421,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, RequirementGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRequirementGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, RequirementWithDriverGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRequirementWithDriverGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Requirement model
+   * Fields of the RequirementWithDriver model
    */
-  readonly fields: RequirementFieldRefs;
+  readonly fields: RequirementWithDriverFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Requirement.
+   * The delegate class that acts as a "Promise-like" for RequirementWithDriver.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__RequirementClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__RequirementWithDriverClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -13328,380 +13462,2421 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Requirement model
+   * Fields of the RequirementWithDriver model
    */
-  interface RequirementFieldRefs {
-    readonly id: FieldRef<"Requirement", 'Int'>
-    readonly plusDriver: FieldRef<"Requirement", 'String'>
-    readonly personal: FieldRef<"Requirement", 'String'>
-    readonly company: FieldRef<"Requirement", 'String'>
-    readonly other: FieldRef<"Requirement", 'String'>
-    readonly note: FieldRef<"Requirement", 'String'>
-    readonly createdAt: FieldRef<"Requirement", 'DateTime'>
-    readonly updatedAt: FieldRef<"Requirement", 'DateTime'>
+  interface RequirementWithDriverFieldRefs {
+    readonly id: FieldRef<"RequirementWithDriver", 'Int'>
+    readonly description: FieldRef<"RequirementWithDriver", 'String'>
+    readonly createdAt: FieldRef<"RequirementWithDriver", 'DateTime'>
+    readonly updatedAt: FieldRef<"RequirementWithDriver", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Requirement findUnique
+   * RequirementWithDriver findUnique
    */
-  export type RequirementFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter, which Requirement to fetch.
+     * Filter, which RequirementWithDriver to fetch.
      */
-    where: RequirementWhereUniqueInput
+    where: RequirementWithDriverWhereUniqueInput
   }
 
   /**
-   * Requirement findUniqueOrThrow
+   * RequirementWithDriver findUniqueOrThrow
    */
-  export type RequirementFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter, which Requirement to fetch.
+     * Filter, which RequirementWithDriver to fetch.
      */
-    where: RequirementWhereUniqueInput
+    where: RequirementWithDriverWhereUniqueInput
   }
 
   /**
-   * Requirement findFirst
+   * RequirementWithDriver findFirst
    */
-  export type RequirementFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter, which Requirement to fetch.
+     * Filter, which RequirementWithDriver to fetch.
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Requirements to fetch.
+     * Determine the order of RequirementWithDrivers to fetch.
      */
-    orderBy?: RequirementOrderByWithRelationInput | RequirementOrderByWithRelationInput[]
+    orderBy?: RequirementWithDriverOrderByWithRelationInput | RequirementWithDriverOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Requirements.
+     * Sets the position for searching for RequirementWithDrivers.
      */
-    cursor?: RequirementWhereUniqueInput
+    cursor?: RequirementWithDriverWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Requirements from the position of the cursor.
+     * Take `±n` RequirementWithDrivers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Requirements.
+     * Skip the first `n` RequirementWithDrivers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Requirements.
+     * Filter by unique combinations of RequirementWithDrivers.
      */
-    distinct?: RequirementScalarFieldEnum | RequirementScalarFieldEnum[]
+    distinct?: RequirementWithDriverScalarFieldEnum | RequirementWithDriverScalarFieldEnum[]
   }
 
   /**
-   * Requirement findFirstOrThrow
+   * RequirementWithDriver findFirstOrThrow
    */
-  export type RequirementFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter, which Requirement to fetch.
+     * Filter, which RequirementWithDriver to fetch.
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Requirements to fetch.
+     * Determine the order of RequirementWithDrivers to fetch.
      */
-    orderBy?: RequirementOrderByWithRelationInput | RequirementOrderByWithRelationInput[]
+    orderBy?: RequirementWithDriverOrderByWithRelationInput | RequirementWithDriverOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Requirements.
+     * Sets the position for searching for RequirementWithDrivers.
      */
-    cursor?: RequirementWhereUniqueInput
+    cursor?: RequirementWithDriverWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Requirements from the position of the cursor.
+     * Take `±n` RequirementWithDrivers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Requirements.
+     * Skip the first `n` RequirementWithDrivers.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Requirements.
+     * Filter by unique combinations of RequirementWithDrivers.
      */
-    distinct?: RequirementScalarFieldEnum | RequirementScalarFieldEnum[]
+    distinct?: RequirementWithDriverScalarFieldEnum | RequirementWithDriverScalarFieldEnum[]
   }
 
   /**
-   * Requirement findMany
+   * RequirementWithDriver findMany
    */
-  export type RequirementFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter, which Requirements to fetch.
+     * Filter, which RequirementWithDrivers to fetch.
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Requirements to fetch.
+     * Determine the order of RequirementWithDrivers to fetch.
      */
-    orderBy?: RequirementOrderByWithRelationInput | RequirementOrderByWithRelationInput[]
+    orderBy?: RequirementWithDriverOrderByWithRelationInput | RequirementWithDriverOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Requirements.
+     * Sets the position for listing RequirementWithDrivers.
      */
-    cursor?: RequirementWhereUniqueInput
+    cursor?: RequirementWithDriverWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Requirements from the position of the cursor.
+     * Take `±n` RequirementWithDrivers from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Requirements.
+     * Skip the first `n` RequirementWithDrivers.
      */
     skip?: number
-    distinct?: RequirementScalarFieldEnum | RequirementScalarFieldEnum[]
+    distinct?: RequirementWithDriverScalarFieldEnum | RequirementWithDriverScalarFieldEnum[]
   }
 
   /**
-   * Requirement create
+   * RequirementWithDriver create
    */
-  export type RequirementCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * The data needed to create a Requirement.
+     * The data needed to create a RequirementWithDriver.
      */
-    data: XOR<RequirementCreateInput, RequirementUncheckedCreateInput>
+    data: XOR<RequirementWithDriverCreateInput, RequirementWithDriverUncheckedCreateInput>
   }
 
   /**
-   * Requirement createMany
+   * RequirementWithDriver createMany
    */
-  export type RequirementCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Requirements.
+     * The data used to create many RequirementWithDrivers.
      */
-    data: RequirementCreateManyInput | RequirementCreateManyInput[]
+    data: RequirementWithDriverCreateManyInput | RequirementWithDriverCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Requirement createManyAndReturn
+   * RequirementWithDriver createManyAndReturn
    */
-  export type RequirementCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelectCreateManyAndReturn<ExtArgs> | null
+    select?: RequirementWithDriverSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * The data used to create many Requirements.
+     * The data used to create many RequirementWithDrivers.
      */
-    data: RequirementCreateManyInput | RequirementCreateManyInput[]
+    data: RequirementWithDriverCreateManyInput | RequirementWithDriverCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Requirement update
+   * RequirementWithDriver update
    */
-  export type RequirementUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * The data needed to update a Requirement.
+     * The data needed to update a RequirementWithDriver.
      */
-    data: XOR<RequirementUpdateInput, RequirementUncheckedUpdateInput>
+    data: XOR<RequirementWithDriverUpdateInput, RequirementWithDriverUncheckedUpdateInput>
     /**
-     * Choose, which Requirement to update.
+     * Choose, which RequirementWithDriver to update.
      */
-    where: RequirementWhereUniqueInput
+    where: RequirementWithDriverWhereUniqueInput
   }
 
   /**
-   * Requirement updateMany
+   * RequirementWithDriver updateMany
    */
-  export type RequirementUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Requirements.
+     * The data used to update RequirementWithDrivers.
      */
-    data: XOR<RequirementUpdateManyMutationInput, RequirementUncheckedUpdateManyInput>
+    data: XOR<RequirementWithDriverUpdateManyMutationInput, RequirementWithDriverUncheckedUpdateManyInput>
     /**
-     * Filter which Requirements to update
+     * Filter which RequirementWithDrivers to update
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
-     * Limit how many Requirements to update.
+     * Limit how many RequirementWithDrivers to update.
      */
     limit?: number
   }
 
   /**
-   * Requirement updateManyAndReturn
+   * RequirementWithDriver updateManyAndReturn
    */
-  export type RequirementUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: RequirementWithDriverSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * The data used to update Requirements.
+     * The data used to update RequirementWithDrivers.
      */
-    data: XOR<RequirementUpdateManyMutationInput, RequirementUncheckedUpdateManyInput>
+    data: XOR<RequirementWithDriverUpdateManyMutationInput, RequirementWithDriverUncheckedUpdateManyInput>
     /**
-     * Filter which Requirements to update
+     * Filter which RequirementWithDrivers to update
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
-     * Limit how many Requirements to update.
+     * Limit how many RequirementWithDrivers to update.
      */
     limit?: number
   }
 
   /**
-   * Requirement upsert
+   * RequirementWithDriver upsert
    */
-  export type RequirementUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * The filter to search for the Requirement to update in case it exists.
+     * The filter to search for the RequirementWithDriver to update in case it exists.
      */
-    where: RequirementWhereUniqueInput
+    where: RequirementWithDriverWhereUniqueInput
     /**
-     * In case the Requirement found by the `where` argument doesn't exist, create a new Requirement with this data.
+     * In case the RequirementWithDriver found by the `where` argument doesn't exist, create a new RequirementWithDriver with this data.
      */
-    create: XOR<RequirementCreateInput, RequirementUncheckedCreateInput>
+    create: XOR<RequirementWithDriverCreateInput, RequirementWithDriverUncheckedCreateInput>
     /**
-     * In case the Requirement was found with the provided `where` argument, update it with this data.
+     * In case the RequirementWithDriver was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<RequirementUpdateInput, RequirementUncheckedUpdateInput>
+    update: XOR<RequirementWithDriverUpdateInput, RequirementWithDriverUncheckedUpdateInput>
   }
 
   /**
-   * Requirement delete
+   * RequirementWithDriver delete
    */
-  export type RequirementDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
     /**
-     * Filter which Requirement to delete.
+     * Filter which RequirementWithDriver to delete.
      */
-    where: RequirementWhereUniqueInput
+    where: RequirementWithDriverWhereUniqueInput
   }
 
   /**
-   * Requirement deleteMany
+   * RequirementWithDriver deleteMany
    */
-  export type RequirementDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Requirements to delete
+     * Filter which RequirementWithDrivers to delete
      */
-    where?: RequirementWhereInput
+    where?: RequirementWithDriverWhereInput
     /**
-     * Limit how many Requirements to delete.
+     * Limit how many RequirementWithDrivers to delete.
      */
     limit?: number
   }
 
   /**
-   * Requirement without action
+   * RequirementWithDriver without action
    */
-  export type RequirementDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequirementWithDriverDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Requirement
+     * Select specific fields to fetch from the RequirementWithDriver
      */
-    select?: RequirementSelect<ExtArgs> | null
+    select?: RequirementWithDriverSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Requirement
+     * Omit specific fields from the RequirementWithDriver
      */
-    omit?: RequirementOmit<ExtArgs> | null
+    omit?: RequirementWithDriverOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RequirementNoDriver
+   */
+
+  export type AggregateRequirementNoDriver = {
+    _count: RequirementNoDriverCountAggregateOutputType | null
+    _avg: RequirementNoDriverAvgAggregateOutputType | null
+    _sum: RequirementNoDriverSumAggregateOutputType | null
+    _min: RequirementNoDriverMinAggregateOutputType | null
+    _max: RequirementNoDriverMaxAggregateOutputType | null
+  }
+
+  export type RequirementNoDriverAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type RequirementNoDriverSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type RequirementNoDriverMinAggregateOutputType = {
+    id: number | null
+    title: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type RequirementNoDriverMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type RequirementNoDriverCountAggregateOutputType = {
+    id: number
+    title: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type RequirementNoDriverAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type RequirementNoDriverSumAggregateInputType = {
+    id?: true
+  }
+
+  export type RequirementNoDriverMinAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type RequirementNoDriverMaxAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type RequirementNoDriverCountAggregateInputType = {
+    id?: true
+    title?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type RequirementNoDriverAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RequirementNoDriver to aggregate.
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNoDrivers to fetch.
+     */
+    orderBy?: RequirementNoDriverOrderByWithRelationInput | RequirementNoDriverOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RequirementNoDriverWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNoDrivers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNoDrivers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RequirementNoDrivers
+    **/
+    _count?: true | RequirementNoDriverCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RequirementNoDriverAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RequirementNoDriverSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RequirementNoDriverMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RequirementNoDriverMaxAggregateInputType
+  }
+
+  export type GetRequirementNoDriverAggregateType<T extends RequirementNoDriverAggregateArgs> = {
+        [P in keyof T & keyof AggregateRequirementNoDriver]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRequirementNoDriver[P]>
+      : GetScalarType<T[P], AggregateRequirementNoDriver[P]>
+  }
+
+
+
+
+  export type RequirementNoDriverGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RequirementNoDriverWhereInput
+    orderBy?: RequirementNoDriverOrderByWithAggregationInput | RequirementNoDriverOrderByWithAggregationInput[]
+    by: RequirementNoDriverScalarFieldEnum[] | RequirementNoDriverScalarFieldEnum
+    having?: RequirementNoDriverScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RequirementNoDriverCountAggregateInputType | true
+    _avg?: RequirementNoDriverAvgAggregateInputType
+    _sum?: RequirementNoDriverSumAggregateInputType
+    _min?: RequirementNoDriverMinAggregateInputType
+    _max?: RequirementNoDriverMaxAggregateInputType
+  }
+
+  export type RequirementNoDriverGroupByOutputType = {
+    id: number
+    title: string
+    description: string
+    createdAt: Date
+    updatedAt: Date
+    _count: RequirementNoDriverCountAggregateOutputType | null
+    _avg: RequirementNoDriverAvgAggregateOutputType | null
+    _sum: RequirementNoDriverSumAggregateOutputType | null
+    _min: RequirementNoDriverMinAggregateOutputType | null
+    _max: RequirementNoDriverMaxAggregateOutputType | null
+  }
+
+  type GetRequirementNoDriverGroupByPayload<T extends RequirementNoDriverGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RequirementNoDriverGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RequirementNoDriverGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RequirementNoDriverGroupByOutputType[P]>
+            : GetScalarType<T[P], RequirementNoDriverGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RequirementNoDriverSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNoDriver"]>
+
+  export type RequirementNoDriverSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNoDriver"]>
+
+  export type RequirementNoDriverSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNoDriver"]>
+
+  export type RequirementNoDriverSelectScalar = {
+    id?: boolean
+    title?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type RequirementNoDriverOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["requirementNoDriver"]>
+
+  export type $RequirementNoDriverPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RequirementNoDriver"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      title: string
+      description: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["requirementNoDriver"]>
+    composites: {}
+  }
+
+  type RequirementNoDriverGetPayload<S extends boolean | null | undefined | RequirementNoDriverDefaultArgs> = $Result.GetResult<Prisma.$RequirementNoDriverPayload, S>
+
+  type RequirementNoDriverCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RequirementNoDriverFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RequirementNoDriverCountAggregateInputType | true
+    }
+
+  export interface RequirementNoDriverDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RequirementNoDriver'], meta: { name: 'RequirementNoDriver' } }
+    /**
+     * Find zero or one RequirementNoDriver that matches the filter.
+     * @param {RequirementNoDriverFindUniqueArgs} args - Arguments to find a RequirementNoDriver
+     * @example
+     * // Get one RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RequirementNoDriverFindUniqueArgs>(args: SelectSubset<T, RequirementNoDriverFindUniqueArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RequirementNoDriver that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RequirementNoDriverFindUniqueOrThrowArgs} args - Arguments to find a RequirementNoDriver
+     * @example
+     * // Get one RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RequirementNoDriverFindUniqueOrThrowArgs>(args: SelectSubset<T, RequirementNoDriverFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RequirementNoDriver that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverFindFirstArgs} args - Arguments to find a RequirementNoDriver
+     * @example
+     * // Get one RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RequirementNoDriverFindFirstArgs>(args?: SelectSubset<T, RequirementNoDriverFindFirstArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RequirementNoDriver that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverFindFirstOrThrowArgs} args - Arguments to find a RequirementNoDriver
+     * @example
+     * // Get one RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RequirementNoDriverFindFirstOrThrowArgs>(args?: SelectSubset<T, RequirementNoDriverFindFirstOrThrowArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RequirementNoDrivers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RequirementNoDrivers
+     * const requirementNoDrivers = await prisma.requirementNoDriver.findMany()
+     * 
+     * // Get first 10 RequirementNoDrivers
+     * const requirementNoDrivers = await prisma.requirementNoDriver.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const requirementNoDriverWithIdOnly = await prisma.requirementNoDriver.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RequirementNoDriverFindManyArgs>(args?: SelectSubset<T, RequirementNoDriverFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RequirementNoDriver.
+     * @param {RequirementNoDriverCreateArgs} args - Arguments to create a RequirementNoDriver.
+     * @example
+     * // Create one RequirementNoDriver
+     * const RequirementNoDriver = await prisma.requirementNoDriver.create({
+     *   data: {
+     *     // ... data to create a RequirementNoDriver
+     *   }
+     * })
+     * 
+     */
+    create<T extends RequirementNoDriverCreateArgs>(args: SelectSubset<T, RequirementNoDriverCreateArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RequirementNoDrivers.
+     * @param {RequirementNoDriverCreateManyArgs} args - Arguments to create many RequirementNoDrivers.
+     * @example
+     * // Create many RequirementNoDrivers
+     * const requirementNoDriver = await prisma.requirementNoDriver.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RequirementNoDriverCreateManyArgs>(args?: SelectSubset<T, RequirementNoDriverCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RequirementNoDrivers and returns the data saved in the database.
+     * @param {RequirementNoDriverCreateManyAndReturnArgs} args - Arguments to create many RequirementNoDrivers.
+     * @example
+     * // Create many RequirementNoDrivers
+     * const requirementNoDriver = await prisma.requirementNoDriver.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RequirementNoDrivers and only return the `id`
+     * const requirementNoDriverWithIdOnly = await prisma.requirementNoDriver.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RequirementNoDriverCreateManyAndReturnArgs>(args?: SelectSubset<T, RequirementNoDriverCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RequirementNoDriver.
+     * @param {RequirementNoDriverDeleteArgs} args - Arguments to delete one RequirementNoDriver.
+     * @example
+     * // Delete one RequirementNoDriver
+     * const RequirementNoDriver = await prisma.requirementNoDriver.delete({
+     *   where: {
+     *     // ... filter to delete one RequirementNoDriver
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RequirementNoDriverDeleteArgs>(args: SelectSubset<T, RequirementNoDriverDeleteArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RequirementNoDriver.
+     * @param {RequirementNoDriverUpdateArgs} args - Arguments to update one RequirementNoDriver.
+     * @example
+     * // Update one RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RequirementNoDriverUpdateArgs>(args: SelectSubset<T, RequirementNoDriverUpdateArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RequirementNoDrivers.
+     * @param {RequirementNoDriverDeleteManyArgs} args - Arguments to filter RequirementNoDrivers to delete.
+     * @example
+     * // Delete a few RequirementNoDrivers
+     * const { count } = await prisma.requirementNoDriver.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RequirementNoDriverDeleteManyArgs>(args?: SelectSubset<T, RequirementNoDriverDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RequirementNoDrivers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RequirementNoDrivers
+     * const requirementNoDriver = await prisma.requirementNoDriver.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RequirementNoDriverUpdateManyArgs>(args: SelectSubset<T, RequirementNoDriverUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RequirementNoDrivers and returns the data updated in the database.
+     * @param {RequirementNoDriverUpdateManyAndReturnArgs} args - Arguments to update many RequirementNoDrivers.
+     * @example
+     * // Update many RequirementNoDrivers
+     * const requirementNoDriver = await prisma.requirementNoDriver.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RequirementNoDrivers and only return the `id`
+     * const requirementNoDriverWithIdOnly = await prisma.requirementNoDriver.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RequirementNoDriverUpdateManyAndReturnArgs>(args: SelectSubset<T, RequirementNoDriverUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RequirementNoDriver.
+     * @param {RequirementNoDriverUpsertArgs} args - Arguments to update or create a RequirementNoDriver.
+     * @example
+     * // Update or create a RequirementNoDriver
+     * const requirementNoDriver = await prisma.requirementNoDriver.upsert({
+     *   create: {
+     *     // ... data to create a RequirementNoDriver
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RequirementNoDriver we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RequirementNoDriverUpsertArgs>(args: SelectSubset<T, RequirementNoDriverUpsertArgs<ExtArgs>>): Prisma__RequirementNoDriverClient<$Result.GetResult<Prisma.$RequirementNoDriverPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RequirementNoDrivers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverCountArgs} args - Arguments to filter RequirementNoDrivers to count.
+     * @example
+     * // Count the number of RequirementNoDrivers
+     * const count = await prisma.requirementNoDriver.count({
+     *   where: {
+     *     // ... the filter for the RequirementNoDrivers we want to count
+     *   }
+     * })
+    **/
+    count<T extends RequirementNoDriverCountArgs>(
+      args?: Subset<T, RequirementNoDriverCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RequirementNoDriverCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RequirementNoDriver.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RequirementNoDriverAggregateArgs>(args: Subset<T, RequirementNoDriverAggregateArgs>): Prisma.PrismaPromise<GetRequirementNoDriverAggregateType<T>>
+
+    /**
+     * Group by RequirementNoDriver.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoDriverGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RequirementNoDriverGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RequirementNoDriverGroupByArgs['orderBy'] }
+        : { orderBy?: RequirementNoDriverGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RequirementNoDriverGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRequirementNoDriverGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RequirementNoDriver model
+   */
+  readonly fields: RequirementNoDriverFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RequirementNoDriver.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RequirementNoDriverClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RequirementNoDriver model
+   */
+  interface RequirementNoDriverFieldRefs {
+    readonly id: FieldRef<"RequirementNoDriver", 'Int'>
+    readonly title: FieldRef<"RequirementNoDriver", 'String'>
+    readonly description: FieldRef<"RequirementNoDriver", 'String'>
+    readonly createdAt: FieldRef<"RequirementNoDriver", 'DateTime'>
+    readonly updatedAt: FieldRef<"RequirementNoDriver", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RequirementNoDriver findUnique
+   */
+  export type RequirementNoDriverFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNoDriver to fetch.
+     */
+    where: RequirementNoDriverWhereUniqueInput
+  }
+
+  /**
+   * RequirementNoDriver findUniqueOrThrow
+   */
+  export type RequirementNoDriverFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNoDriver to fetch.
+     */
+    where: RequirementNoDriverWhereUniqueInput
+  }
+
+  /**
+   * RequirementNoDriver findFirst
+   */
+  export type RequirementNoDriverFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNoDriver to fetch.
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNoDrivers to fetch.
+     */
+    orderBy?: RequirementNoDriverOrderByWithRelationInput | RequirementNoDriverOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RequirementNoDrivers.
+     */
+    cursor?: RequirementNoDriverWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNoDrivers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNoDrivers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RequirementNoDrivers.
+     */
+    distinct?: RequirementNoDriverScalarFieldEnum | RequirementNoDriverScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNoDriver findFirstOrThrow
+   */
+  export type RequirementNoDriverFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNoDriver to fetch.
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNoDrivers to fetch.
+     */
+    orderBy?: RequirementNoDriverOrderByWithRelationInput | RequirementNoDriverOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RequirementNoDrivers.
+     */
+    cursor?: RequirementNoDriverWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNoDrivers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNoDrivers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RequirementNoDrivers.
+     */
+    distinct?: RequirementNoDriverScalarFieldEnum | RequirementNoDriverScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNoDriver findMany
+   */
+  export type RequirementNoDriverFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNoDrivers to fetch.
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNoDrivers to fetch.
+     */
+    orderBy?: RequirementNoDriverOrderByWithRelationInput | RequirementNoDriverOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RequirementNoDrivers.
+     */
+    cursor?: RequirementNoDriverWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNoDrivers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNoDrivers.
+     */
+    skip?: number
+    distinct?: RequirementNoDriverScalarFieldEnum | RequirementNoDriverScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNoDriver create
+   */
+  export type RequirementNoDriverCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * The data needed to create a RequirementNoDriver.
+     */
+    data: XOR<RequirementNoDriverCreateInput, RequirementNoDriverUncheckedCreateInput>
+  }
+
+  /**
+   * RequirementNoDriver createMany
+   */
+  export type RequirementNoDriverCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RequirementNoDrivers.
+     */
+    data: RequirementNoDriverCreateManyInput | RequirementNoDriverCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RequirementNoDriver createManyAndReturn
+   */
+  export type RequirementNoDriverCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * The data used to create many RequirementNoDrivers.
+     */
+    data: RequirementNoDriverCreateManyInput | RequirementNoDriverCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RequirementNoDriver update
+   */
+  export type RequirementNoDriverUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * The data needed to update a RequirementNoDriver.
+     */
+    data: XOR<RequirementNoDriverUpdateInput, RequirementNoDriverUncheckedUpdateInput>
+    /**
+     * Choose, which RequirementNoDriver to update.
+     */
+    where: RequirementNoDriverWhereUniqueInput
+  }
+
+  /**
+   * RequirementNoDriver updateMany
+   */
+  export type RequirementNoDriverUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RequirementNoDrivers.
+     */
+    data: XOR<RequirementNoDriverUpdateManyMutationInput, RequirementNoDriverUncheckedUpdateManyInput>
+    /**
+     * Filter which RequirementNoDrivers to update
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * Limit how many RequirementNoDrivers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNoDriver updateManyAndReturn
+   */
+  export type RequirementNoDriverUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * The data used to update RequirementNoDrivers.
+     */
+    data: XOR<RequirementNoDriverUpdateManyMutationInput, RequirementNoDriverUncheckedUpdateManyInput>
+    /**
+     * Filter which RequirementNoDrivers to update
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * Limit how many RequirementNoDrivers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNoDriver upsert
+   */
+  export type RequirementNoDriverUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * The filter to search for the RequirementNoDriver to update in case it exists.
+     */
+    where: RequirementNoDriverWhereUniqueInput
+    /**
+     * In case the RequirementNoDriver found by the `where` argument doesn't exist, create a new RequirementNoDriver with this data.
+     */
+    create: XOR<RequirementNoDriverCreateInput, RequirementNoDriverUncheckedCreateInput>
+    /**
+     * In case the RequirementNoDriver was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RequirementNoDriverUpdateInput, RequirementNoDriverUncheckedUpdateInput>
+  }
+
+  /**
+   * RequirementNoDriver delete
+   */
+  export type RequirementNoDriverDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+    /**
+     * Filter which RequirementNoDriver to delete.
+     */
+    where: RequirementNoDriverWhereUniqueInput
+  }
+
+  /**
+   * RequirementNoDriver deleteMany
+   */
+  export type RequirementNoDriverDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RequirementNoDrivers to delete
+     */
+    where?: RequirementNoDriverWhereInput
+    /**
+     * Limit how many RequirementNoDrivers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNoDriver without action
+   */
+  export type RequirementNoDriverDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNoDriver
+     */
+    select?: RequirementNoDriverSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNoDriver
+     */
+    omit?: RequirementNoDriverOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RequirementNote
+   */
+
+  export type AggregateRequirementNote = {
+    _count: RequirementNoteCountAggregateOutputType | null
+    _avg: RequirementNoteAvgAggregateOutputType | null
+    _sum: RequirementNoteSumAggregateOutputType | null
+    _min: RequirementNoteMinAggregateOutputType | null
+    _max: RequirementNoteMaxAggregateOutputType | null
+  }
+
+  export type RequirementNoteAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type RequirementNoteSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type RequirementNoteMinAggregateOutputType = {
+    id: number | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type RequirementNoteMaxAggregateOutputType = {
+    id: number | null
+    description: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type RequirementNoteCountAggregateOutputType = {
+    id: number
+    description: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type RequirementNoteAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type RequirementNoteSumAggregateInputType = {
+    id?: true
+  }
+
+  export type RequirementNoteMinAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type RequirementNoteMaxAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type RequirementNoteCountAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type RequirementNoteAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RequirementNote to aggregate.
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNotes to fetch.
+     */
+    orderBy?: RequirementNoteOrderByWithRelationInput | RequirementNoteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RequirementNoteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNotes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNotes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RequirementNotes
+    **/
+    _count?: true | RequirementNoteCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RequirementNoteAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RequirementNoteSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RequirementNoteMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RequirementNoteMaxAggregateInputType
+  }
+
+  export type GetRequirementNoteAggregateType<T extends RequirementNoteAggregateArgs> = {
+        [P in keyof T & keyof AggregateRequirementNote]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRequirementNote[P]>
+      : GetScalarType<T[P], AggregateRequirementNote[P]>
+  }
+
+
+
+
+  export type RequirementNoteGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RequirementNoteWhereInput
+    orderBy?: RequirementNoteOrderByWithAggregationInput | RequirementNoteOrderByWithAggregationInput[]
+    by: RequirementNoteScalarFieldEnum[] | RequirementNoteScalarFieldEnum
+    having?: RequirementNoteScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RequirementNoteCountAggregateInputType | true
+    _avg?: RequirementNoteAvgAggregateInputType
+    _sum?: RequirementNoteSumAggregateInputType
+    _min?: RequirementNoteMinAggregateInputType
+    _max?: RequirementNoteMaxAggregateInputType
+  }
+
+  export type RequirementNoteGroupByOutputType = {
+    id: number
+    description: string
+    createdAt: Date
+    updatedAt: Date
+    _count: RequirementNoteCountAggregateOutputType | null
+    _avg: RequirementNoteAvgAggregateOutputType | null
+    _sum: RequirementNoteSumAggregateOutputType | null
+    _min: RequirementNoteMinAggregateOutputType | null
+    _max: RequirementNoteMaxAggregateOutputType | null
+  }
+
+  type GetRequirementNoteGroupByPayload<T extends RequirementNoteGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RequirementNoteGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RequirementNoteGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RequirementNoteGroupByOutputType[P]>
+            : GetScalarType<T[P], RequirementNoteGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RequirementNoteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNote"]>
+
+  export type RequirementNoteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNote"]>
+
+  export type RequirementNoteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["requirementNote"]>
+
+  export type RequirementNoteSelectScalar = {
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type RequirementNoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["requirementNote"]>
+
+  export type $RequirementNotePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RequirementNote"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      description: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["requirementNote"]>
+    composites: {}
+  }
+
+  type RequirementNoteGetPayload<S extends boolean | null | undefined | RequirementNoteDefaultArgs> = $Result.GetResult<Prisma.$RequirementNotePayload, S>
+
+  type RequirementNoteCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RequirementNoteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RequirementNoteCountAggregateInputType | true
+    }
+
+  export interface RequirementNoteDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RequirementNote'], meta: { name: 'RequirementNote' } }
+    /**
+     * Find zero or one RequirementNote that matches the filter.
+     * @param {RequirementNoteFindUniqueArgs} args - Arguments to find a RequirementNote
+     * @example
+     * // Get one RequirementNote
+     * const requirementNote = await prisma.requirementNote.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RequirementNoteFindUniqueArgs>(args: SelectSubset<T, RequirementNoteFindUniqueArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RequirementNote that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RequirementNoteFindUniqueOrThrowArgs} args - Arguments to find a RequirementNote
+     * @example
+     * // Get one RequirementNote
+     * const requirementNote = await prisma.requirementNote.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RequirementNoteFindUniqueOrThrowArgs>(args: SelectSubset<T, RequirementNoteFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RequirementNote that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteFindFirstArgs} args - Arguments to find a RequirementNote
+     * @example
+     * // Get one RequirementNote
+     * const requirementNote = await prisma.requirementNote.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RequirementNoteFindFirstArgs>(args?: SelectSubset<T, RequirementNoteFindFirstArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RequirementNote that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteFindFirstOrThrowArgs} args - Arguments to find a RequirementNote
+     * @example
+     * // Get one RequirementNote
+     * const requirementNote = await prisma.requirementNote.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RequirementNoteFindFirstOrThrowArgs>(args?: SelectSubset<T, RequirementNoteFindFirstOrThrowArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RequirementNotes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RequirementNotes
+     * const requirementNotes = await prisma.requirementNote.findMany()
+     * 
+     * // Get first 10 RequirementNotes
+     * const requirementNotes = await prisma.requirementNote.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const requirementNoteWithIdOnly = await prisma.requirementNote.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RequirementNoteFindManyArgs>(args?: SelectSubset<T, RequirementNoteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RequirementNote.
+     * @param {RequirementNoteCreateArgs} args - Arguments to create a RequirementNote.
+     * @example
+     * // Create one RequirementNote
+     * const RequirementNote = await prisma.requirementNote.create({
+     *   data: {
+     *     // ... data to create a RequirementNote
+     *   }
+     * })
+     * 
+     */
+    create<T extends RequirementNoteCreateArgs>(args: SelectSubset<T, RequirementNoteCreateArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RequirementNotes.
+     * @param {RequirementNoteCreateManyArgs} args - Arguments to create many RequirementNotes.
+     * @example
+     * // Create many RequirementNotes
+     * const requirementNote = await prisma.requirementNote.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RequirementNoteCreateManyArgs>(args?: SelectSubset<T, RequirementNoteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RequirementNotes and returns the data saved in the database.
+     * @param {RequirementNoteCreateManyAndReturnArgs} args - Arguments to create many RequirementNotes.
+     * @example
+     * // Create many RequirementNotes
+     * const requirementNote = await prisma.requirementNote.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RequirementNotes and only return the `id`
+     * const requirementNoteWithIdOnly = await prisma.requirementNote.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RequirementNoteCreateManyAndReturnArgs>(args?: SelectSubset<T, RequirementNoteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RequirementNote.
+     * @param {RequirementNoteDeleteArgs} args - Arguments to delete one RequirementNote.
+     * @example
+     * // Delete one RequirementNote
+     * const RequirementNote = await prisma.requirementNote.delete({
+     *   where: {
+     *     // ... filter to delete one RequirementNote
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RequirementNoteDeleteArgs>(args: SelectSubset<T, RequirementNoteDeleteArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RequirementNote.
+     * @param {RequirementNoteUpdateArgs} args - Arguments to update one RequirementNote.
+     * @example
+     * // Update one RequirementNote
+     * const requirementNote = await prisma.requirementNote.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RequirementNoteUpdateArgs>(args: SelectSubset<T, RequirementNoteUpdateArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RequirementNotes.
+     * @param {RequirementNoteDeleteManyArgs} args - Arguments to filter RequirementNotes to delete.
+     * @example
+     * // Delete a few RequirementNotes
+     * const { count } = await prisma.requirementNote.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RequirementNoteDeleteManyArgs>(args?: SelectSubset<T, RequirementNoteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RequirementNotes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RequirementNotes
+     * const requirementNote = await prisma.requirementNote.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RequirementNoteUpdateManyArgs>(args: SelectSubset<T, RequirementNoteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RequirementNotes and returns the data updated in the database.
+     * @param {RequirementNoteUpdateManyAndReturnArgs} args - Arguments to update many RequirementNotes.
+     * @example
+     * // Update many RequirementNotes
+     * const requirementNote = await prisma.requirementNote.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RequirementNotes and only return the `id`
+     * const requirementNoteWithIdOnly = await prisma.requirementNote.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RequirementNoteUpdateManyAndReturnArgs>(args: SelectSubset<T, RequirementNoteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RequirementNote.
+     * @param {RequirementNoteUpsertArgs} args - Arguments to update or create a RequirementNote.
+     * @example
+     * // Update or create a RequirementNote
+     * const requirementNote = await prisma.requirementNote.upsert({
+     *   create: {
+     *     // ... data to create a RequirementNote
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RequirementNote we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RequirementNoteUpsertArgs>(args: SelectSubset<T, RequirementNoteUpsertArgs<ExtArgs>>): Prisma__RequirementNoteClient<$Result.GetResult<Prisma.$RequirementNotePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RequirementNotes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteCountArgs} args - Arguments to filter RequirementNotes to count.
+     * @example
+     * // Count the number of RequirementNotes
+     * const count = await prisma.requirementNote.count({
+     *   where: {
+     *     // ... the filter for the RequirementNotes we want to count
+     *   }
+     * })
+    **/
+    count<T extends RequirementNoteCountArgs>(
+      args?: Subset<T, RequirementNoteCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RequirementNoteCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RequirementNote.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RequirementNoteAggregateArgs>(args: Subset<T, RequirementNoteAggregateArgs>): Prisma.PrismaPromise<GetRequirementNoteAggregateType<T>>
+
+    /**
+     * Group by RequirementNote.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RequirementNoteGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RequirementNoteGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RequirementNoteGroupByArgs['orderBy'] }
+        : { orderBy?: RequirementNoteGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RequirementNoteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRequirementNoteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RequirementNote model
+   */
+  readonly fields: RequirementNoteFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RequirementNote.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RequirementNoteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RequirementNote model
+   */
+  interface RequirementNoteFieldRefs {
+    readonly id: FieldRef<"RequirementNote", 'Int'>
+    readonly description: FieldRef<"RequirementNote", 'String'>
+    readonly createdAt: FieldRef<"RequirementNote", 'DateTime'>
+    readonly updatedAt: FieldRef<"RequirementNote", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RequirementNote findUnique
+   */
+  export type RequirementNoteFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNote to fetch.
+     */
+    where: RequirementNoteWhereUniqueInput
+  }
+
+  /**
+   * RequirementNote findUniqueOrThrow
+   */
+  export type RequirementNoteFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNote to fetch.
+     */
+    where: RequirementNoteWhereUniqueInput
+  }
+
+  /**
+   * RequirementNote findFirst
+   */
+  export type RequirementNoteFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNote to fetch.
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNotes to fetch.
+     */
+    orderBy?: RequirementNoteOrderByWithRelationInput | RequirementNoteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RequirementNotes.
+     */
+    cursor?: RequirementNoteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNotes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNotes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RequirementNotes.
+     */
+    distinct?: RequirementNoteScalarFieldEnum | RequirementNoteScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNote findFirstOrThrow
+   */
+  export type RequirementNoteFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNote to fetch.
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNotes to fetch.
+     */
+    orderBy?: RequirementNoteOrderByWithRelationInput | RequirementNoteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RequirementNotes.
+     */
+    cursor?: RequirementNoteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNotes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNotes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RequirementNotes.
+     */
+    distinct?: RequirementNoteScalarFieldEnum | RequirementNoteScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNote findMany
+   */
+  export type RequirementNoteFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter, which RequirementNotes to fetch.
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RequirementNotes to fetch.
+     */
+    orderBy?: RequirementNoteOrderByWithRelationInput | RequirementNoteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RequirementNotes.
+     */
+    cursor?: RequirementNoteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RequirementNotes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RequirementNotes.
+     */
+    skip?: number
+    distinct?: RequirementNoteScalarFieldEnum | RequirementNoteScalarFieldEnum[]
+  }
+
+  /**
+   * RequirementNote create
+   */
+  export type RequirementNoteCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * The data needed to create a RequirementNote.
+     */
+    data: XOR<RequirementNoteCreateInput, RequirementNoteUncheckedCreateInput>
+  }
+
+  /**
+   * RequirementNote createMany
+   */
+  export type RequirementNoteCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RequirementNotes.
+     */
+    data: RequirementNoteCreateManyInput | RequirementNoteCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RequirementNote createManyAndReturn
+   */
+  export type RequirementNoteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * The data used to create many RequirementNotes.
+     */
+    data: RequirementNoteCreateManyInput | RequirementNoteCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RequirementNote update
+   */
+  export type RequirementNoteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * The data needed to update a RequirementNote.
+     */
+    data: XOR<RequirementNoteUpdateInput, RequirementNoteUncheckedUpdateInput>
+    /**
+     * Choose, which RequirementNote to update.
+     */
+    where: RequirementNoteWhereUniqueInput
+  }
+
+  /**
+   * RequirementNote updateMany
+   */
+  export type RequirementNoteUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RequirementNotes.
+     */
+    data: XOR<RequirementNoteUpdateManyMutationInput, RequirementNoteUncheckedUpdateManyInput>
+    /**
+     * Filter which RequirementNotes to update
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * Limit how many RequirementNotes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNote updateManyAndReturn
+   */
+  export type RequirementNoteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * The data used to update RequirementNotes.
+     */
+    data: XOR<RequirementNoteUpdateManyMutationInput, RequirementNoteUncheckedUpdateManyInput>
+    /**
+     * Filter which RequirementNotes to update
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * Limit how many RequirementNotes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNote upsert
+   */
+  export type RequirementNoteUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * The filter to search for the RequirementNote to update in case it exists.
+     */
+    where: RequirementNoteWhereUniqueInput
+    /**
+     * In case the RequirementNote found by the `where` argument doesn't exist, create a new RequirementNote with this data.
+     */
+    create: XOR<RequirementNoteCreateInput, RequirementNoteUncheckedCreateInput>
+    /**
+     * In case the RequirementNote was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RequirementNoteUpdateInput, RequirementNoteUncheckedUpdateInput>
+  }
+
+  /**
+   * RequirementNote delete
+   */
+  export type RequirementNoteDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
+    /**
+     * Filter which RequirementNote to delete.
+     */
+    where: RequirementNoteWhereUniqueInput
+  }
+
+  /**
+   * RequirementNote deleteMany
+   */
+  export type RequirementNoteDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RequirementNotes to delete
+     */
+    where?: RequirementNoteWhereInput
+    /**
+     * Limit how many RequirementNotes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RequirementNote without action
+   */
+  export type RequirementNoteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RequirementNote
+     */
+    select?: RequirementNoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RequirementNote
+     */
+    omit?: RequirementNoteOmit<ExtArgs> | null
   }
 
 
@@ -14866,18 +17041,35 @@ export namespace Prisma {
   export type OurServiceScalarFieldEnum = (typeof OurServiceScalarFieldEnum)[keyof typeof OurServiceScalarFieldEnum]
 
 
-  export const RequirementScalarFieldEnum: {
+  export const RequirementWithDriverScalarFieldEnum: {
     id: 'id',
-    plusDriver: 'plusDriver',
-    personal: 'personal',
-    company: 'company',
-    other: 'other',
-    note: 'note',
+    description: 'description',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
-  export type RequirementScalarFieldEnum = (typeof RequirementScalarFieldEnum)[keyof typeof RequirementScalarFieldEnum]
+  export type RequirementWithDriverScalarFieldEnum = (typeof RequirementWithDriverScalarFieldEnum)[keyof typeof RequirementWithDriverScalarFieldEnum]
+
+
+  export const RequirementNoDriverScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type RequirementNoDriverScalarFieldEnum = (typeof RequirementNoDriverScalarFieldEnum)[keyof typeof RequirementNoDriverScalarFieldEnum]
+
+
+  export const RequirementNoteScalarFieldEnum: {
+    id: 'id',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type RequirementNoteScalarFieldEnum = (typeof RequirementNoteScalarFieldEnum)[keyof typeof RequirementNoteScalarFieldEnum]
 
 
   export const RegulationScalarFieldEnum: {
@@ -15629,73 +17821,156 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"OurService"> | Date | string
   }
 
-  export type RequirementWhereInput = {
-    AND?: RequirementWhereInput | RequirementWhereInput[]
-    OR?: RequirementWhereInput[]
-    NOT?: RequirementWhereInput | RequirementWhereInput[]
-    id?: IntFilter<"Requirement"> | number
-    plusDriver?: StringFilter<"Requirement"> | string
-    personal?: StringFilter<"Requirement"> | string
-    company?: StringFilter<"Requirement"> | string
-    other?: StringFilter<"Requirement"> | string
-    note?: StringFilter<"Requirement"> | string
-    createdAt?: DateTimeFilter<"Requirement"> | Date | string
-    updatedAt?: DateTimeFilter<"Requirement"> | Date | string
+  export type RequirementWithDriverWhereInput = {
+    AND?: RequirementWithDriverWhereInput | RequirementWithDriverWhereInput[]
+    OR?: RequirementWithDriverWhereInput[]
+    NOT?: RequirementWithDriverWhereInput | RequirementWithDriverWhereInput[]
+    id?: IntFilter<"RequirementWithDriver"> | number
+    description?: StringFilter<"RequirementWithDriver"> | string
+    createdAt?: DateTimeFilter<"RequirementWithDriver"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementWithDriver"> | Date | string
   }
 
-  export type RequirementOrderByWithRelationInput = {
+  export type RequirementWithDriverOrderByWithRelationInput = {
     id?: SortOrder
-    plusDriver?: SortOrder
-    personal?: SortOrder
-    company?: SortOrder
-    other?: SortOrder
-    note?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type RequirementWhereUniqueInput = Prisma.AtLeast<{
+  export type RequirementWithDriverWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: RequirementWhereInput | RequirementWhereInput[]
-    OR?: RequirementWhereInput[]
-    NOT?: RequirementWhereInput | RequirementWhereInput[]
-    plusDriver?: StringFilter<"Requirement"> | string
-    personal?: StringFilter<"Requirement"> | string
-    company?: StringFilter<"Requirement"> | string
-    other?: StringFilter<"Requirement"> | string
-    note?: StringFilter<"Requirement"> | string
-    createdAt?: DateTimeFilter<"Requirement"> | Date | string
-    updatedAt?: DateTimeFilter<"Requirement"> | Date | string
+    AND?: RequirementWithDriverWhereInput | RequirementWithDriverWhereInput[]
+    OR?: RequirementWithDriverWhereInput[]
+    NOT?: RequirementWithDriverWhereInput | RequirementWithDriverWhereInput[]
+    description?: StringFilter<"RequirementWithDriver"> | string
+    createdAt?: DateTimeFilter<"RequirementWithDriver"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementWithDriver"> | Date | string
   }, "id">
 
-  export type RequirementOrderByWithAggregationInput = {
+  export type RequirementWithDriverOrderByWithAggregationInput = {
     id?: SortOrder
-    plusDriver?: SortOrder
-    personal?: SortOrder
-    company?: SortOrder
-    other?: SortOrder
-    note?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: RequirementCountOrderByAggregateInput
-    _avg?: RequirementAvgOrderByAggregateInput
-    _max?: RequirementMaxOrderByAggregateInput
-    _min?: RequirementMinOrderByAggregateInput
-    _sum?: RequirementSumOrderByAggregateInput
+    _count?: RequirementWithDriverCountOrderByAggregateInput
+    _avg?: RequirementWithDriverAvgOrderByAggregateInput
+    _max?: RequirementWithDriverMaxOrderByAggregateInput
+    _min?: RequirementWithDriverMinOrderByAggregateInput
+    _sum?: RequirementWithDriverSumOrderByAggregateInput
   }
 
-  export type RequirementScalarWhereWithAggregatesInput = {
-    AND?: RequirementScalarWhereWithAggregatesInput | RequirementScalarWhereWithAggregatesInput[]
-    OR?: RequirementScalarWhereWithAggregatesInput[]
-    NOT?: RequirementScalarWhereWithAggregatesInput | RequirementScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Requirement"> | number
-    plusDriver?: StringWithAggregatesFilter<"Requirement"> | string
-    personal?: StringWithAggregatesFilter<"Requirement"> | string
-    company?: StringWithAggregatesFilter<"Requirement"> | string
-    other?: StringWithAggregatesFilter<"Requirement"> | string
-    note?: StringWithAggregatesFilter<"Requirement"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Requirement"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Requirement"> | Date | string
+  export type RequirementWithDriverScalarWhereWithAggregatesInput = {
+    AND?: RequirementWithDriverScalarWhereWithAggregatesInput | RequirementWithDriverScalarWhereWithAggregatesInput[]
+    OR?: RequirementWithDriverScalarWhereWithAggregatesInput[]
+    NOT?: RequirementWithDriverScalarWhereWithAggregatesInput | RequirementWithDriverScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"RequirementWithDriver"> | number
+    description?: StringWithAggregatesFilter<"RequirementWithDriver"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"RequirementWithDriver"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RequirementWithDriver"> | Date | string
+  }
+
+  export type RequirementNoDriverWhereInput = {
+    AND?: RequirementNoDriverWhereInput | RequirementNoDriverWhereInput[]
+    OR?: RequirementNoDriverWhereInput[]
+    NOT?: RequirementNoDriverWhereInput | RequirementNoDriverWhereInput[]
+    id?: IntFilter<"RequirementNoDriver"> | number
+    title?: StringFilter<"RequirementNoDriver"> | string
+    description?: StringFilter<"RequirementNoDriver"> | string
+    createdAt?: DateTimeFilter<"RequirementNoDriver"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementNoDriver"> | Date | string
+  }
+
+  export type RequirementNoDriverOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoDriverWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: RequirementNoDriverWhereInput | RequirementNoDriverWhereInput[]
+    OR?: RequirementNoDriverWhereInput[]
+    NOT?: RequirementNoDriverWhereInput | RequirementNoDriverWhereInput[]
+    title?: StringFilter<"RequirementNoDriver"> | string
+    description?: StringFilter<"RequirementNoDriver"> | string
+    createdAt?: DateTimeFilter<"RequirementNoDriver"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementNoDriver"> | Date | string
+  }, "id">
+
+  export type RequirementNoDriverOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: RequirementNoDriverCountOrderByAggregateInput
+    _avg?: RequirementNoDriverAvgOrderByAggregateInput
+    _max?: RequirementNoDriverMaxOrderByAggregateInput
+    _min?: RequirementNoDriverMinOrderByAggregateInput
+    _sum?: RequirementNoDriverSumOrderByAggregateInput
+  }
+
+  export type RequirementNoDriverScalarWhereWithAggregatesInput = {
+    AND?: RequirementNoDriverScalarWhereWithAggregatesInput | RequirementNoDriverScalarWhereWithAggregatesInput[]
+    OR?: RequirementNoDriverScalarWhereWithAggregatesInput[]
+    NOT?: RequirementNoDriverScalarWhereWithAggregatesInput | RequirementNoDriverScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"RequirementNoDriver"> | number
+    title?: StringWithAggregatesFilter<"RequirementNoDriver"> | string
+    description?: StringWithAggregatesFilter<"RequirementNoDriver"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"RequirementNoDriver"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RequirementNoDriver"> | Date | string
+  }
+
+  export type RequirementNoteWhereInput = {
+    AND?: RequirementNoteWhereInput | RequirementNoteWhereInput[]
+    OR?: RequirementNoteWhereInput[]
+    NOT?: RequirementNoteWhereInput | RequirementNoteWhereInput[]
+    id?: IntFilter<"RequirementNote"> | number
+    description?: StringFilter<"RequirementNote"> | string
+    createdAt?: DateTimeFilter<"RequirementNote"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementNote"> | Date | string
+  }
+
+  export type RequirementNoteOrderByWithRelationInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoteWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: RequirementNoteWhereInput | RequirementNoteWhereInput[]
+    OR?: RequirementNoteWhereInput[]
+    NOT?: RequirementNoteWhereInput | RequirementNoteWhereInput[]
+    description?: StringFilter<"RequirementNote"> | string
+    createdAt?: DateTimeFilter<"RequirementNote"> | Date | string
+    updatedAt?: DateTimeFilter<"RequirementNote"> | Date | string
+  }, "id">
+
+  export type RequirementNoteOrderByWithAggregationInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: RequirementNoteCountOrderByAggregateInput
+    _avg?: RequirementNoteAvgOrderByAggregateInput
+    _max?: RequirementNoteMaxOrderByAggregateInput
+    _min?: RequirementNoteMinOrderByAggregateInput
+    _sum?: RequirementNoteSumOrderByAggregateInput
+  }
+
+  export type RequirementNoteScalarWhereWithAggregatesInput = {
+    AND?: RequirementNoteScalarWhereWithAggregatesInput | RequirementNoteScalarWhereWithAggregatesInput[]
+    OR?: RequirementNoteScalarWhereWithAggregatesInput[]
+    NOT?: RequirementNoteScalarWhereWithAggregatesInput | RequirementNoteScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"RequirementNote"> | number
+    description?: StringWithAggregatesFilter<"RequirementNote"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"RequirementNote"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RequirementNote"> | Date | string
   }
 
   export type RegulationWhereInput = {
@@ -16427,76 +18702,147 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RequirementCreateInput = {
-    plusDriver: string
-    personal: string
-    company: string
-    other: string
-    note: string
+  export type RequirementWithDriverCreateInput = {
+    description: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type RequirementUncheckedCreateInput = {
+  export type RequirementWithDriverUncheckedCreateInput = {
     id?: number
-    plusDriver: string
-    personal: string
-    company: string
-    other: string
-    note: string
+    description: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type RequirementUpdateInput = {
-    plusDriver?: StringFieldUpdateOperationsInput | string
-    personal?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
-    other?: StringFieldUpdateOperationsInput | string
-    note?: StringFieldUpdateOperationsInput | string
+  export type RequirementWithDriverUpdateInput = {
+    description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RequirementUncheckedUpdateInput = {
+  export type RequirementWithDriverUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    plusDriver?: StringFieldUpdateOperationsInput | string
-    personal?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
-    other?: StringFieldUpdateOperationsInput | string
-    note?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RequirementCreateManyInput = {
+  export type RequirementWithDriverCreateManyInput = {
     id?: number
-    plusDriver: string
-    personal: string
-    company: string
-    other: string
-    note: string
+    description: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type RequirementUpdateManyMutationInput = {
-    plusDriver?: StringFieldUpdateOperationsInput | string
-    personal?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
-    other?: StringFieldUpdateOperationsInput | string
-    note?: StringFieldUpdateOperationsInput | string
+  export type RequirementWithDriverUpdateManyMutationInput = {
+    description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RequirementUncheckedUpdateManyInput = {
+  export type RequirementWithDriverUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    plusDriver?: StringFieldUpdateOperationsInput | string
-    personal?: StringFieldUpdateOperationsInput | string
-    company?: StringFieldUpdateOperationsInput | string
-    other?: StringFieldUpdateOperationsInput | string
-    note?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoDriverCreateInput = {
+    title: string
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoDriverUncheckedCreateInput = {
+    id?: number
+    title: string
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoDriverUpdateInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoDriverUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoDriverCreateManyInput = {
+    id?: number
+    title: string
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoDriverUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoDriverUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoteCreateInput = {
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoteUncheckedCreateInput = {
+    id?: number
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoteUpdateInput = {
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoteUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoteCreateManyInput = {
+    id?: number
+    description: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type RequirementNoteUpdateManyMutationInput = {
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RequirementNoteUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    description?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17140,44 +19486,93 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type RequirementCountOrderByAggregateInput = {
+  export type RequirementWithDriverCountOrderByAggregateInput = {
     id?: SortOrder
-    plusDriver?: SortOrder
-    personal?: SortOrder
-    company?: SortOrder
-    other?: SortOrder
-    note?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type RequirementAvgOrderByAggregateInput = {
+  export type RequirementWithDriverAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type RequirementMaxOrderByAggregateInput = {
+  export type RequirementWithDriverMaxOrderByAggregateInput = {
     id?: SortOrder
-    plusDriver?: SortOrder
-    personal?: SortOrder
-    company?: SortOrder
-    other?: SortOrder
-    note?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type RequirementMinOrderByAggregateInput = {
+  export type RequirementWithDriverMinOrderByAggregateInput = {
     id?: SortOrder
-    plusDriver?: SortOrder
-    personal?: SortOrder
-    company?: SortOrder
-    other?: SortOrder
-    note?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type RequirementSumOrderByAggregateInput = {
+  export type RequirementWithDriverSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type RequirementNoDriverCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoDriverAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type RequirementNoDriverMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoDriverMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoDriverSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type RequirementNoteCountOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoteAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type RequirementNoteMaxOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoteMinOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type RequirementNoteSumOrderByAggregateInput = {
     id?: SortOrder
   }
 

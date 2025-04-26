@@ -218,13 +218,24 @@ exports.Prisma.OurServiceScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.RequirementScalarFieldEnum = {
+exports.Prisma.RequirementWithDriverScalarFieldEnum = {
   id: 'id',
-  plusDriver: 'plusDriver',
-  personal: 'personal',
-  company: 'company',
-  other: 'other',
-  note: 'note',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.RequirementNoDriverScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.RequirementNoteScalarFieldEnum = {
+  id: 'id',
+  description: 'description',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -263,7 +274,9 @@ exports.Prisma.ModelName = {
   CompanyAbout: 'CompanyAbout',
   OurAdvantage: 'OurAdvantage',
   OurService: 'OurService',
-  Requirement: 'Requirement',
+  RequirementWithDriver: 'RequirementWithDriver',
+  RequirementNoDriver: 'RequirementNoDriver',
+  RequirementNote: 'RequirementNote',
   Regulation: 'Regulation'
 };
 

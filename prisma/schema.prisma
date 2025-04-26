@@ -63,13 +63,13 @@ model Brand {
   name String @db.VarChar(255)
   slug String @unique @db.VarChar(255)
 
-  Product Product[]
+  Car Car[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Product {
+model Car {
   id                  Int     @id @default(autoincrement())
   name                String  @db.VarChar(255)
   slug                String  @unique @db.VarChar(255)
@@ -88,6 +88,7 @@ model Product {
   fuelType      String @db.VarChar(100) // Bensin, Solar, Listrik, Hybrid, dll.
   transmission  String @db.VarChar(100) // Manual atau Automatic
   maxPassengers Int // Maksimal jumlah penumpang
+  payloadCapacity Float? // dalam kilogram atau ton
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -123,15 +124,26 @@ model OurService {
   updatedAt   DateTime @updatedAt
 }
 
-model Requirement {
-  id         Int      @id @default(autoincrement())
-  plusDriver String   @db.Text()
-  personal   String   @db.Text()
-  company    String   @db.Text()
-  other      String   @db.Text()
-  note       String   @db.Text()
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+model RequirementWithDriver {
+  id          Int      @id @default(autoincrement())
+  description String   @db.Text()
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model RequirementNoDriver {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.Text()
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model RequirementNote {
+  id          Int      @id @default(autoincrement())
+  description String   @db.Text()
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Regulation {
