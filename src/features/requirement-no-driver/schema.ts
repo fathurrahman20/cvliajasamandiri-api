@@ -18,7 +18,7 @@ export type CreateRequirementNoDriver = z.infer<
 
 export const UpdateRequirementNoDriverSchema = z.object({
   id: z.number(),
-  title: z.string().openapi({
+  title: z.string().optional().openapi({
     description: "Title",
     example: "PRIBADI / PERSEORANGAN",
   }),

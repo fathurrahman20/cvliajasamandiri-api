@@ -63,13 +63,13 @@ model Brand {
   name String @db.VarChar(255)
   slug String @unique @db.VarChar(255)
 
-  Product Product[]
+  Car Car[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Product {
+model Car {
   id                  Int     @id @default(autoincrement())
   name                String  @db.VarChar(255)
   slug                String  @unique @db.VarChar(255)
@@ -84,10 +84,11 @@ model Product {
   priceFullDayOutCity Float?
   priceHalfDayOutCity Float?
 
-  year          Int // Tahun mobil dibuat
-  fuelType      String @db.VarChar(100) // Bensin, Solar, Listrik, Hybrid, dll.
-  transmission  String @db.VarChar(100) // Manual atau Automatic
-  maxPassengers Int // Maksimal jumlah penumpang
+  year            Int // Tahun mobil dibuat
+  fuelType        String @db.VarChar(100) // Bensin, Solar, Listrik, Hybrid, dll.
+  transmission    String @db.VarChar(100) // Manual atau Automatic
+  maxPassengers   Int // Maksimal jumlah penumpang
+  payloadCapacity Float? // dalam kilogram atau ton
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

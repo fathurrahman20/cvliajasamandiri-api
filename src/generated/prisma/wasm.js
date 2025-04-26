@@ -167,7 +167,7 @@ exports.Prisma.BrandScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.ProductScalarFieldEnum = {
+exports.Prisma.CarScalarFieldEnum = {
   id: 'id',
   name: 'name',
   slug: 'slug',
@@ -184,6 +184,7 @@ exports.Prisma.ProductScalarFieldEnum = {
   fuelType: 'fuelType',
   transmission: 'transmission',
   maxPassengers: 'maxPassengers',
+  payloadCapacity: 'payloadCapacity',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -270,7 +271,7 @@ exports.Prisma.ModelName = {
   Faq: 'Faq',
   Footer: 'Footer',
   Brand: 'Brand',
-  Product: 'Product',
+  Car: 'Car',
   CompanyAbout: 'CompanyAbout',
   OurAdvantage: 'OurAdvantage',
   OurService: 'OurService',
