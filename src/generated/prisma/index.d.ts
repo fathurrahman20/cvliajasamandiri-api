@@ -8374,8 +8374,6 @@ export namespace Prisma {
     brandId: number | null
     priceFullDay: number | null
     priceHalfDay: number | null
-    priceFullDayInCity: number | null
-    priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
     year: number | null
@@ -8388,8 +8386,6 @@ export namespace Prisma {
     brandId: number | null
     priceFullDay: number | null
     priceHalfDay: number | null
-    priceFullDayInCity: number | null
-    priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
     year: number | null
@@ -8401,13 +8397,11 @@ export namespace Prisma {
     id: number | null
     name: string | null
     slug: string | null
-    features: string | null
+    imageId: string | null
     imageUrl: string | null
     brandId: number | null
     priceFullDay: number | null
     priceHalfDay: number | null
-    priceFullDayInCity: number | null
-    priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
     year: number | null
@@ -8423,13 +8417,11 @@ export namespace Prisma {
     id: number | null
     name: string | null
     slug: string | null
-    features: string | null
+    imageId: string | null
     imageUrl: string | null
     brandId: number | null
     priceFullDay: number | null
     priceHalfDay: number | null
-    priceFullDayInCity: number | null
-    priceHalfDayInCity: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
     year: number | null
@@ -8445,13 +8437,11 @@ export namespace Prisma {
     id: number
     name: number
     slug: number
-    features: number
+    imageId: number
     imageUrl: number
     brandId: number
     priceFullDay: number
     priceHalfDay: number
-    priceFullDayInCity: number
-    priceHalfDayInCity: number
     priceFullDayOutCity: number
     priceHalfDayOutCity: number
     year: number
@@ -8470,8 +8460,6 @@ export namespace Prisma {
     brandId?: true
     priceFullDay?: true
     priceHalfDay?: true
-    priceFullDayInCity?: true
-    priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
     year?: true
@@ -8484,8 +8472,6 @@ export namespace Prisma {
     brandId?: true
     priceFullDay?: true
     priceHalfDay?: true
-    priceFullDayInCity?: true
-    priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
     year?: true
@@ -8497,13 +8483,11 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    features?: true
+    imageId?: true
     imageUrl?: true
     brandId?: true
     priceFullDay?: true
     priceHalfDay?: true
-    priceFullDayInCity?: true
-    priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
     year?: true
@@ -8519,13 +8503,11 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    features?: true
+    imageId?: true
     imageUrl?: true
     brandId?: true
     priceFullDay?: true
     priceHalfDay?: true
-    priceFullDayInCity?: true
-    priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
     year?: true
@@ -8541,13 +8523,11 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    features?: true
+    imageId?: true
     imageUrl?: true
     brandId?: true
     priceFullDay?: true
     priceHalfDay?: true
-    priceFullDayInCity?: true
-    priceHalfDayInCity?: true
     priceFullDayOutCity?: true
     priceHalfDayOutCity?: true
     year?: true
@@ -8650,13 +8630,11 @@ export namespace Prisma {
     id: number
     name: string
     slug: string
-    features: string
-    imageUrl: string | null
+    imageId: string
+    imageUrl: string
     brandId: number
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity: number | null
-    priceHalfDayInCity: number | null
+    priceHalfDay: number | null
     priceFullDayOutCity: number | null
     priceHalfDayOutCity: number | null
     year: number
@@ -8691,13 +8669,11 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    features?: boolean
+    imageId?: boolean
     imageUrl?: boolean
     brandId?: boolean
     priceFullDay?: boolean
     priceHalfDay?: boolean
-    priceFullDayInCity?: boolean
-    priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
     year?: boolean
@@ -8714,13 +8690,11 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    features?: boolean
+    imageId?: boolean
     imageUrl?: boolean
     brandId?: boolean
     priceFullDay?: boolean
     priceHalfDay?: boolean
-    priceFullDayInCity?: boolean
-    priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
     year?: boolean
@@ -8737,13 +8711,11 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    features?: boolean
+    imageId?: boolean
     imageUrl?: boolean
     brandId?: boolean
     priceFullDay?: boolean
     priceHalfDay?: boolean
-    priceFullDayInCity?: boolean
-    priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
     year?: boolean
@@ -8760,13 +8732,11 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    features?: boolean
+    imageId?: boolean
     imageUrl?: boolean
     brandId?: boolean
     priceFullDay?: boolean
     priceHalfDay?: boolean
-    priceFullDayInCity?: boolean
-    priceHalfDayInCity?: boolean
     priceFullDayOutCity?: boolean
     priceHalfDayOutCity?: boolean
     year?: boolean
@@ -8778,7 +8748,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type CarOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "features" | "imageUrl" | "brandId" | "priceFullDay" | "priceHalfDay" | "priceFullDayInCity" | "priceHalfDayInCity" | "priceFullDayOutCity" | "priceHalfDayOutCity" | "year" | "fuelType" | "transmission" | "maxPassengers" | "payloadCapacity" | "createdAt" | "updatedAt", ExtArgs["result"]["car"]>
+  export type CarOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "imageId" | "imageUrl" | "brandId" | "priceFullDay" | "priceHalfDay" | "priceFullDayOutCity" | "priceHalfDayOutCity" | "year" | "fuelType" | "transmission" | "maxPassengers" | "payloadCapacity" | "createdAt" | "updatedAt", ExtArgs["result"]["car"]>
   export type CarInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | BrandDefaultArgs<ExtArgs>
   }
@@ -8798,13 +8768,11 @@ export namespace Prisma {
       id: number
       name: string
       slug: string
-      features: string
-      imageUrl: string | null
+      imageId: string
+      imageUrl: string
       brandId: number
       priceFullDay: number
-      priceHalfDay: number
-      priceFullDayInCity: number | null
-      priceHalfDayInCity: number | null
+      priceHalfDay: number | null
       priceFullDayOutCity: number | null
       priceHalfDayOutCity: number | null
       year: number
@@ -9241,13 +9209,11 @@ export namespace Prisma {
     readonly id: FieldRef<"Car", 'Int'>
     readonly name: FieldRef<"Car", 'String'>
     readonly slug: FieldRef<"Car", 'String'>
-    readonly features: FieldRef<"Car", 'String'>
+    readonly imageId: FieldRef<"Car", 'String'>
     readonly imageUrl: FieldRef<"Car", 'String'>
     readonly brandId: FieldRef<"Car", 'Int'>
     readonly priceFullDay: FieldRef<"Car", 'Float'>
     readonly priceHalfDay: FieldRef<"Car", 'Float'>
-    readonly priceFullDayInCity: FieldRef<"Car", 'Float'>
-    readonly priceHalfDayInCity: FieldRef<"Car", 'Float'>
     readonly priceFullDayOutCity: FieldRef<"Car", 'Float'>
     readonly priceHalfDayOutCity: FieldRef<"Car", 'Float'>
     readonly year: FieldRef<"Car", 'Int'>
@@ -16999,13 +16965,11 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     slug: 'slug',
-    features: 'features',
+    imageId: 'imageId',
     imageUrl: 'imageUrl',
     brandId: 'brandId',
     priceFullDay: 'priceFullDay',
     priceHalfDay: 'priceHalfDay',
-    priceFullDayInCity: 'priceFullDayInCity',
-    priceHalfDayInCity: 'priceHalfDayInCity',
     priceFullDayOutCity: 'priceFullDayOutCity',
     priceHalfDayOutCity: 'priceHalfDayOutCity',
     year: 'year',
@@ -17532,13 +17496,11 @@ export namespace Prisma {
     id?: IntFilter<"Car"> | number
     name?: StringFilter<"Car"> | string
     slug?: StringFilter<"Car"> | string
-    features?: StringFilter<"Car"> | string
-    imageUrl?: StringNullableFilter<"Car"> | string | null
+    imageId?: StringFilter<"Car"> | string
+    imageUrl?: StringFilter<"Car"> | string
     brandId?: IntFilter<"Car"> | number
     priceFullDay?: FloatFilter<"Car"> | number
-    priceHalfDay?: FloatFilter<"Car"> | number
-    priceFullDayInCity?: FloatNullableFilter<"Car"> | number | null
-    priceHalfDayInCity?: FloatNullableFilter<"Car"> | number | null
+    priceHalfDay?: FloatNullableFilter<"Car"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Car"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Car"> | number | null
     year?: IntFilter<"Car"> | number
@@ -17555,13 +17517,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    features?: SortOrder
-    imageUrl?: SortOrderInput | SortOrder
+    imageId?: SortOrder
+    imageUrl?: SortOrder
     brandId?: SortOrder
     priceFullDay?: SortOrder
-    priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrderInput | SortOrder
-    priceHalfDayInCity?: SortOrderInput | SortOrder
+    priceHalfDay?: SortOrderInput | SortOrder
     priceFullDayOutCity?: SortOrderInput | SortOrder
     priceHalfDayOutCity?: SortOrderInput | SortOrder
     year?: SortOrder
@@ -17581,13 +17541,11 @@ export namespace Prisma {
     OR?: CarWhereInput[]
     NOT?: CarWhereInput | CarWhereInput[]
     name?: StringFilter<"Car"> | string
-    features?: StringFilter<"Car"> | string
-    imageUrl?: StringNullableFilter<"Car"> | string | null
+    imageId?: StringFilter<"Car"> | string
+    imageUrl?: StringFilter<"Car"> | string
     brandId?: IntFilter<"Car"> | number
     priceFullDay?: FloatFilter<"Car"> | number
-    priceHalfDay?: FloatFilter<"Car"> | number
-    priceFullDayInCity?: FloatNullableFilter<"Car"> | number | null
-    priceHalfDayInCity?: FloatNullableFilter<"Car"> | number | null
+    priceHalfDay?: FloatNullableFilter<"Car"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Car"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Car"> | number | null
     year?: IntFilter<"Car"> | number
@@ -17604,13 +17562,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    features?: SortOrder
-    imageUrl?: SortOrderInput | SortOrder
+    imageId?: SortOrder
+    imageUrl?: SortOrder
     brandId?: SortOrder
     priceFullDay?: SortOrder
-    priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrderInput | SortOrder
-    priceHalfDayInCity?: SortOrderInput | SortOrder
+    priceHalfDay?: SortOrderInput | SortOrder
     priceFullDayOutCity?: SortOrderInput | SortOrder
     priceHalfDayOutCity?: SortOrderInput | SortOrder
     year?: SortOrder
@@ -17634,13 +17590,11 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Car"> | number
     name?: StringWithAggregatesFilter<"Car"> | string
     slug?: StringWithAggregatesFilter<"Car"> | string
-    features?: StringWithAggregatesFilter<"Car"> | string
-    imageUrl?: StringNullableWithAggregatesFilter<"Car"> | string | null
+    imageId?: StringWithAggregatesFilter<"Car"> | string
+    imageUrl?: StringWithAggregatesFilter<"Car"> | string
     brandId?: IntWithAggregatesFilter<"Car"> | number
     priceFullDay?: FloatWithAggregatesFilter<"Car"> | number
-    priceHalfDay?: FloatWithAggregatesFilter<"Car"> | number
-    priceFullDayInCity?: FloatNullableWithAggregatesFilter<"Car"> | number | null
-    priceHalfDayInCity?: FloatNullableWithAggregatesFilter<"Car"> | number | null
+    priceHalfDay?: FloatNullableWithAggregatesFilter<"Car"> | number | null
     priceFullDayOutCity?: FloatNullableWithAggregatesFilter<"Car"> | number | null
     priceHalfDayOutCity?: FloatNullableWithAggregatesFilter<"Car"> | number | null
     year?: IntWithAggregatesFilter<"Car"> | number
@@ -18384,12 +18338,10 @@ export namespace Prisma {
   export type CarCreateInput = {
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -18406,13 +18358,11 @@ export namespace Prisma {
     id?: number
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     brandId: number
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -18427,12 +18377,10 @@ export namespace Prisma {
   export type CarUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -18449,13 +18397,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     brandId?: IntFieldUpdateOperationsInput | number
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -18471,13 +18417,11 @@ export namespace Prisma {
     id?: number
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     brandId: number
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -18492,12 +18436,10 @@ export namespace Prisma {
   export type CarUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -18513,13 +18455,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     brandId?: IntFieldUpdateOperationsInput | number
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -19285,13 +19225,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    features?: SortOrder
+    imageId?: SortOrder
     imageUrl?: SortOrder
     brandId?: SortOrder
     priceFullDay?: SortOrder
     priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrder
-    priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
     year?: SortOrder
@@ -19308,8 +19246,6 @@ export namespace Prisma {
     brandId?: SortOrder
     priceFullDay?: SortOrder
     priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrder
-    priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
     year?: SortOrder
@@ -19321,13 +19257,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    features?: SortOrder
+    imageId?: SortOrder
     imageUrl?: SortOrder
     brandId?: SortOrder
     priceFullDay?: SortOrder
     priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrder
-    priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
     year?: SortOrder
@@ -19343,13 +19277,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    features?: SortOrder
+    imageId?: SortOrder
     imageUrl?: SortOrder
     brandId?: SortOrder
     priceFullDay?: SortOrder
     priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrder
-    priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
     year?: SortOrder
@@ -19366,8 +19298,6 @@ export namespace Prisma {
     brandId?: SortOrder
     priceFullDay?: SortOrder
     priceHalfDay?: SortOrder
-    priceFullDayInCity?: SortOrder
-    priceHalfDayInCity?: SortOrder
     priceFullDayOutCity?: SortOrder
     priceHalfDayOutCity?: SortOrder
     year?: SortOrder
@@ -19914,12 +19844,10 @@ export namespace Prisma {
   export type CarCreateWithoutBrandInput = {
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -19935,12 +19863,10 @@ export namespace Prisma {
     id?: number
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -19985,13 +19911,11 @@ export namespace Prisma {
     id?: IntFilter<"Car"> | number
     name?: StringFilter<"Car"> | string
     slug?: StringFilter<"Car"> | string
-    features?: StringFilter<"Car"> | string
-    imageUrl?: StringNullableFilter<"Car"> | string | null
+    imageId?: StringFilter<"Car"> | string
+    imageUrl?: StringFilter<"Car"> | string
     brandId?: IntFilter<"Car"> | number
     priceFullDay?: FloatFilter<"Car"> | number
-    priceHalfDay?: FloatFilter<"Car"> | number
-    priceFullDayInCity?: FloatNullableFilter<"Car"> | number | null
-    priceHalfDayInCity?: FloatNullableFilter<"Car"> | number | null
+    priceHalfDay?: FloatNullableFilter<"Car"> | number | null
     priceFullDayOutCity?: FloatNullableFilter<"Car"> | number | null
     priceHalfDayOutCity?: FloatNullableFilter<"Car"> | number | null
     year?: IntFilter<"Car"> | number
@@ -20053,12 +19977,10 @@ export namespace Prisma {
     id?: number
     name: string
     slug: string
-    features: string
-    imageUrl?: string | null
+    imageId: string
+    imageUrl: string
     priceFullDay: number
-    priceHalfDay: number
-    priceFullDayInCity?: number | null
-    priceHalfDayInCity?: number | null
+    priceHalfDay?: number | null
     priceFullDayOutCity?: number | null
     priceHalfDayOutCity?: number | null
     year: number
@@ -20073,12 +19995,10 @@ export namespace Prisma {
   export type CarUpdateWithoutBrandInput = {
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -20094,12 +20014,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number
@@ -20115,12 +20033,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageId?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
     priceFullDay?: FloatFieldUpdateOperationsInput | number
-    priceHalfDay?: FloatFieldUpdateOperationsInput | number
-    priceFullDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
-    priceHalfDayInCity?: NullableFloatFieldUpdateOperationsInput | number | null
+    priceHalfDay?: NullableFloatFieldUpdateOperationsInput | number | null
     priceFullDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     priceHalfDayOutCity?: NullableFloatFieldUpdateOperationsInput | number | null
     year?: IntFieldUpdateOperationsInput | number

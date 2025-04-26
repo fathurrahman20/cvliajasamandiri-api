@@ -15,6 +15,7 @@ import requirementNoDriverRoute from "./features/requirement-no-driver/route";
 import requirementNoteRoute from "./features/requirement-note/route";
 import companyAboutRoute from "./features/company-about/route";
 import brandRoute from "./features/brand/route";
+import carRoute from "./features/car/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -65,6 +66,7 @@ app.route("/requirement-no-driver", requirementNoDriverRoute);
 app.route("/requirement-note", requirementNoteRoute);
 app.route("/about-us", companyAboutRoute);
 app.route("/brands", brandRoute);
+app.route("/cars", carRoute);
 
 // Error handling
 app.onError(async (err, c) => {

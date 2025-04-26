@@ -70,17 +70,15 @@ model Brand {
 }
 
 model Car {
-  id                  Int     @id @default(autoincrement())
-  name                String  @db.VarChar(255)
-  slug                String  @unique @db.VarChar(255)
-  features            String  @db.Text
-  imageUrl            String? @db.VarChar(255)
+  id                  Int    @id @default(autoincrement())
+  name                String @db.VarChar(255)
+  slug                String @unique @db.VarChar(255)
+  imageId             String @db.VarChar(255)
+  imageUrl            String @db.VarChar(255)
   brandId             Int
-  brand               Brand   @relation(fields: [brandId], references: [id])
+  brand               Brand  @relation(fields: [brandId], references: [id])
   priceFullDay        Float
-  priceHalfDay        Float
-  priceFullDayInCity  Float?
-  priceHalfDayInCity  Float?
+  priceHalfDay        Float?
   priceFullDayOutCity Float?
   priceHalfDayOutCity Float?
 
