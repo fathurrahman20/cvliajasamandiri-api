@@ -13,6 +13,7 @@ import regulationRoute from "./features/regulation/route";
 import requirementWithDriverRoute from "./features/requirement-with-driver/route";
 import requirementNoDriverRoute from "./features/requirement-no-driver/route";
 import requirementNoteRoute from "./features/requirement-note/route";
+import companyAboutRoute from "./features/company-about/route";
 import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
@@ -61,6 +62,7 @@ app.route("/regulation", regulationRoute);
 app.route("/requirement-with-driver", requirementWithDriverRoute);
 app.route("/requirement-no-driver", requirementNoDriverRoute);
 app.route("/requirement-note", requirementNoteRoute);
+app.route("/about-us", companyAboutRoute);
 
 // Error handling
 app.onError(async (err, c) => {
