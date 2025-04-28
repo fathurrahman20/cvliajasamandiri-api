@@ -249,7 +249,7 @@ authRoute.openapi(
 // Logout User
 authRoute.openapi(
   {
-    method: "post",
+    method: "delete",
     path: "/logout",
     summary: "Log out the current user",
     description:
@@ -302,10 +302,10 @@ authRoute.openapi(
 
     clearAuthCookies(c);
 
-    return c.json({ 
+    return c.json({
       success: true,
-      message: "Logged out successfully"
-     });
+      message: "Logged out successfully",
+    });
   }
 );
 
