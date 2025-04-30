@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "start": "bun run src/index.ts",
-    "build": "bun install && bun db:migrate:deploy && bun db:gen"
+    "build": "bun install && bun db:migrate:deploy",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy"
   },
   "dependencies": {
     "@hono/zod-openapi": "^0.19.5",
