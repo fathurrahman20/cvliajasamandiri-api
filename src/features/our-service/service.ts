@@ -8,7 +8,9 @@ import {
 import { HTTPException } from "hono/http-exception";
 
 export const getAllOurServiceSection = async () => {
-  return await prisma.ourService.findMany();
+  return await prisma.ourService.findMany({
+    orderBy: { id: "asc" },
+  });
 };
 
 export const getOurServiceSection = async (id: number) => {

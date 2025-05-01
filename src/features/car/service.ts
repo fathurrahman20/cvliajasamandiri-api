@@ -10,6 +10,7 @@ import { HTTPException } from "hono/http-exception";
 export const getAllCarSection = async () => {
   return await prisma.car.findMany({
     include: { brand: true },
+    orderBy: { id: "asc" },
   });
 };
 

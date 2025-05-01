@@ -59,7 +59,7 @@ export const loginUser = async ({ email, password }: LoginUser) => {
 
   if (!isPasswordValid) {
     throw new HTTPException(401, {
-      message: "Username or password is wrong",
+      message: "Email or password is wrong",
     });
   }
 
