@@ -1,6 +1,8 @@
 import { Context } from "hono";
 import { deleteCookie, setSignedCookie } from "hono/cookie";
 
+const isProduction = Bun.env.NODE_ENV === "production";
+
 export const setAuthCookies = async (
   c: Context,
   accessToken: string,
@@ -12,7 +14,8 @@ export const setAuthCookies = async (
     httpOnly: true,
     maxAge: 24 * 60 * 60, // 1 day in seconds
     expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 1 day/24 hours
-    sameSite: "Strict",
+    secure: isProduction, // wajib true di production
+    sameSite: isProduction ? "None" : "Lax",
   });
 
   await setSignedCookie(c, "refresh_token", refreshToken, cookieSecret, {
@@ -20,7 +23,8 @@ export const setAuthCookies = async (
     httpOnly: true,
     maxAge: 7 * 24 * 60 * 60, // 7 days in seconds
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
-    sameSite: "Strict",
+    secure: isProduction, // wajib true di production
+    sameSite: isProduction ? "None" : "Lax",
   });
 };
 
