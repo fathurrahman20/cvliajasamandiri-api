@@ -14,6 +14,7 @@ import {
   getCarSection,
   updateCarSection,
 } from "./service";
+import { v2 as cloudinary } from "cloudinary";
 
 const carSectionRoute = new OpenAPIHono();
 
@@ -82,6 +83,16 @@ carSectionRoute.openapi(
     });
   }
 );
+
+carSectionRoute.use(async (_, next) => {
+  cloudinary.config({
+    secure: true,
+    cloud_name: Bun.env.CLOUD_NAME,
+    api_key: Bun.env.CLOUD_API_KEY,
+    api_secret: Bun.env.CLOUD_API_SECRET,
+  });
+  await next();
+});
 
 // Create Car
 carSectionRoute.openapi(

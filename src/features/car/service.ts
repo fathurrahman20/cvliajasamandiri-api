@@ -6,6 +6,7 @@ import {
   UpdateCarSchema,
 } from "./schema";
 import { HTTPException } from "hono/http-exception";
+import { v2 as cloudinary } from "cloudinary";
 
 export const getAllCarSection = async () => {
   return await prisma.car.findMany({
@@ -57,6 +58,10 @@ export const updateCarSection = async (request: UpdateCar) => {
     throw new HTTPException(404, { message: "Car not found!" });
   }
 
+  if (request.imageId !== findCar.imageId) {
+    await cloudinary.uploader.destroy(findCar.imageId, (result) => result);
+  }
+
   const updatedCar = await prisma.car.update({
     where: { id: findCar.id },
     data: request,
@@ -73,6 +78,8 @@ export const deleteCar = async (id: number) => {
   if (!findCar) {
     throw new HTTPException(404, { message: "Car not found!" });
   }
+
+  await cloudinary.uploader.destroy(findCar.imageId, (result) => result);
 
   await prisma.car.delete({
     where: { id },
